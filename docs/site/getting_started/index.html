@@ -1,0 +1,814 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.3">
+    
+    
+      
+        <title>Getting started - GME Package Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.8d40d89b.css">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+      
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <a href="#getting-started" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href=".." title="GME Package Documentation" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                GME Package Documentation
+              </span>
+              <span class="md-header-nav__topic">
+                Getting started
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    <span class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </span>
+    GME Package Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Getting started
+      </label>
+    
+    <a href="./" title="Getting started" class="md-nav__link md-nav__link--active">
+      Getting started
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#preparing-the-software" title="Preparing the Software" class="md-nav__link">
+    Preparing the Software
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dependencies" title="Dependencies" class="md-nav__link">
+    Dependencies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installation" title="Installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-basic-example-run-ppml-estimation" title="A Basic Example: Run PPML estimation" class="md-nav__link">
+    A Basic Example: Run PPML estimation
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-import-the-needed-packages" title="Step 1. Import the needed packages" class="md-nav__link">
+    Step 1. Import the needed packages
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-create-estimationdata" title="Step 2. Create EstimationData" class="md-nav__link">
+    Step 2. Create EstimationData
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-create-an-estimationmodel" title="Step 3. Create an EstimationModel" class="md-nav__link">
+    Step 3. Create an EstimationModel
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-estimate-the-model" title="Step 4. Estimate the model" class="md-nav__link">
+    Step 4. Estimate the model
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Tutorials
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Tutorials
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../estimation_tutorial/" title="Estimation" class="md-nav__link">
+      Estimation
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../estimate_technical/" title="Methodology" class="md-nav__link">
+      Methodology
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      API Reference
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        API Reference
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-1" type="checkbox" id="nav-5-1">
+    
+    <label class="md-nav__link" for="nav-5-1">
+      Data Construction
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-1">
+        Data Construction
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../api_docs/EstimationData/" title="EstimationData" class="md-nav__link">
+      EstimationData
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-2" type="checkbox" id="nav-5-2">
+    
+    <label class="md-nav__link" for="nav-5-2">
+      Model Estimation
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-2">
+        Model Estimation
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../api_docs/EstimationModel/" title="EstimationModel" class="md-nav__link">
+      EstimationModel
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../api_docs/estimate_method/" title="estimate" class="md-nav__link">
+      estimate
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../api_docs/format_regression_table/" title="format_regression_table" class="md-nav__link">
+      format_regression_table
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../api_docs/combine_sector_results/" title="combine_sector_results" class="md-nav__link">
+      combine_sector_results
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../api_docs/load_estimation/" title="load_estimation" class="md-nav__link">
+      load_estimation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../api_docs/save_estimation/" title="save_estimation" class="md-nav__link">
+      save_estimation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../api_docs/SlimResults/" title="SlimResults" class="md-nav__link">
+      SlimResults
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../about/" title="About" class="md-nav__link">
+      About
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#preparing-the-software" title="Preparing the Software" class="md-nav__link">
+    Preparing the Software
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dependencies" title="Dependencies" class="md-nav__link">
+    Dependencies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installation" title="Installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-basic-example-run-ppml-estimation" title="A Basic Example: Run PPML estimation" class="md-nav__link">
+    A Basic Example: Run PPML estimation
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-import-the-needed-packages" title="Step 1. Import the needed packages" class="md-nav__link">
+    Step 1. Import the needed packages
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-create-estimationdata" title="Step 2. Create EstimationData" class="md-nav__link">
+    Step 2. Create EstimationData
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-create-an-estimationmodel" title="Step 3. Create an EstimationModel" class="md-nav__link">
+    Step 3. Create an EstimationModel
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-estimate-the-model" title="Step 4. Estimate the model" class="md-nav__link">
+    Step 4. Estimate the model
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="getting-started">Getting Started</h1>
+<h2 id="preparing-the-software">Preparing the Software</h2>
+<h3 id="dependencies">Dependencies</h3>
+<p>The GME package requires pandas, statsmodels, patsy, and scipy packages. If not already present on your system, they will be automatically installed when installing GME.</p>
+<h3 id="installation">Installation</h3>
+<p>Download and install the GME package.</p>
+<div class="codehilite"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">gme</span>
+</pre></div>
+
+<h2 id="a-basic-example-run-ppml-estimation">A Basic Example: Run PPML estimation</h2>
+<h3 id="step-1-import-the-needed-packages">Step 1. Import the needed packages</h3>
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">gme</span> <span class="kn">as</span> <span class="nn">gme</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+</pre></div>
+
+<h3 id="step-2-create-estimationdata">Step 2. Create EstimationData</h3>
+<p>The GME package is built upon a specialized data object called EstimationData. EstimationData contains data in a <a href="http://pandas.pydata.org/pandas-docs/stable/dsintro.html#dataframe">Pandas DataDrame</a> as well as a collection of additional information and tools that are useful for gravity modeling, such as </p>
+<ul>
+<li>A log of the history of the data, such as the location of the file it was read from and modifications made to it,</li>
+<li>Metadata, such as names of the columns containing importer, exporter, and year information, so that they need not be continuously supplied,</li>
+<li>Several tools for producing summary statistics or other types of commonly sought descriptive information.</li>
+</ul>
+<p>Begin by loading example trade data.  The dataset used in the following code is <a href="https://www.usitc.gov/data/gravity/example_trade_and_grav_data_small.csv">available for download</a> or can be accessed directly with python and pandas, as shown below.</p>
+<p><div class="codehilite"><pre><span></span><span class="n">sample_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span>
+    <span class="s1">&#39;https://www.usitc.gov/data/gravity/example_trade_and_grav_data_small.csv&#39;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">sample_data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</pre></div>
+The first command above reads the data file into memory while the second shows the column names and first 5 lines of the data file.
+<div class="codehilite"><pre><span></span><span class="go">  importer exporter  year   trade_value  agree_pta  common_language  \</span>
+<span class="go">0      AUS      BRA  1989  3.035469e+08        0.0              1.0   </span>
+<span class="go">1      AUS      CAN  1989  8.769946e+08        0.0              1.0   </span>
+<span class="go">2      AUS      CHE  1989  4.005245e+08        0.0              1.0   </span>
+<span class="go">3      AUS      DEU  1989  2.468977e+09        0.0              0.0   </span>
+<span class="go">4      AUS      DNK  1989  1.763072e+08        0.0              1.0   </span>
+<span class="go">   contiguity  log_distance  </span>
+<span class="go">0         0.0      9.553332  </span>
+<span class="go">1         0.0      9.637676  </span>
+<span class="go">2         0.0      9.687557  </span>
+<span class="go">3         0.0      9.675007  </span>
+<span class="go">4         0.0      9.657311 </span>
+</pre></div></p>
+<p>Next, create an instance of the EstimationData object using the sample data. To create an EstimationData instance (called gme_data in the example below), you need to supply a Pandas DataFrame and identifiers for certain key columns, such as the trade flows, importer/exporter, year, and sector (if applicable).</p>
+<p><div class="codehilite"><pre><span></span><span class="n">gme_data</span> <span class="o">=</span> <span class="n">gme</span><span class="o">.</span><span class="n">EstimationData</span><span class="p">(</span><span class="n">data_frame</span> <span class="o">=</span> <span class="n">sample_data</span><span class="p">,</span>
+                              <span class="n">imp_var_name</span> <span class="o">=</span> <span class="s1">&#39;importer&#39;</span><span class="p">,</span>
+                              <span class="n">exp_var_name</span> <span class="o">=</span> <span class="s1">&#39;exporter&#39;</span><span class="p">,</span>
+                              <span class="n">trade_var_name</span> <span class="o">=</span> <span class="s1">&#39;trade_value&#39;</span><span class="p">,</span>
+                              <span class="n">year_var_name</span> <span class="o">=</span> <span class="s1">&#39;year&#39;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">gme_data</span><span class="p">)</span>
+</pre></div>
+The print command above produces basic summary statistics, contained in a printable representation of the EstimationData class:</p>
+<div class="codehilite"><pre><span></span><span class="go">number of countries: 62 </span>
+<span class="go">number of exporters: 62 </span>
+<span class="go">number of importers: 62 </span>
+<span class="go">number of years: 27 </span>
+<span class="go">number of sectors: not_applicable </span>
+<span class="go">dimensions: (98612, 8)</span>
+</pre></div>
+
+<h3 id="step-3-create-an-estimationmodel">Step 3. Create an EstimationModel</h3>
+<p>After creating an EstimationData object, you need to create an EstimationModel object, which will be used to produce gravity estimates.  To create an EstimationModel instance (called gme_model in the example below), you need to supply an EstimationData object and a specification.</p>
+<div class="codehilite"><pre><span></span><span class="n">gme_model</span> <span class="o">=</span> <span class="n">gme</span><span class="o">.</span><span class="n">EstimationModel</span><span class="p">(</span><span class="n">estimation_data</span> <span class="o">=</span> <span class="n">gme_data</span><span class="p">,</span>
+                                <span class="n">lhs_var</span> <span class="o">=</span> <span class="s1">&#39;trade_value&#39;</span><span class="p">,</span>
+                                <span class="n">rhs_var</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;log_distance&#39;</span><span class="p">,</span><span class="s1">&#39;agree_pta&#39;</span><span class="p">,</span><span class="s1">&#39;common_language&#39;</span><span class="p">,</span><span class="s1">&#39;contiguity&#39;</span><span class="p">],</span>
+                                <span class="n">fixed_effects</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;importer&#39;</span><span class="p">,</span> <span class="s1">&#39;exporter&#39;</span><span class="p">],</span>
+                                <span class="n">keep_years</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2015</span><span class="p">])</span>
+</pre></div>
+
+<p>The initialization of EstimationModel establishes a reference to the EstimationData object rather than a copy of the data.</p>
+<h3 id="step-4-estimate-the-model">Step 4. Estimate the model</h3>
+<details class="info"><summary>What is a method?</summary><p>A method is a function that is connected only to a particular object. <a href="https://docs.python.org/3/tutorial/classes.html#instance-objects">Click here to see the relevant Python documentation.</a></p></details><p>Once the EstimationModel is defined, it can be estimated by applying the method .estimate()</p>
+<div class="codehilite"><pre><span></span><span class="n">gme_model</span><span class="o">.</span><span class="n">estimate</span><span class="p">()</span>
+</pre></div>
+
+<p>The code provides some information while it is running:</p>
+<div class="codehilite"><pre><span></span><span class="go">select specification variables: [&#39;log_distance&#39;, &#39;agree_pta&#39;, &#39;common_language&#39;, &#39;contiguity&#39;, &#39;trade_value&#39;, &#39;importer&#39;, &#39;exporter&#39;, &#39;year&#39;], Observations excluded by user: {&#39;rows&#39;: 0, &#39;columns&#39;: 0}</span>
+<span class="go">drop_intratrade: no, Observations excluded by user: {&#39;rows&#39;: 0, &#39;columns&#39;: 0}</span>
+<span class="go">drop_imp: none, Observations excluded by user: {&#39;rows&#39;: 0, &#39;columns&#39;: 0}</span>
+<span class="go">drop_exp: none, Observations excluded by user: {&#39;rows&#39;: 0, &#39;columns&#39;: 0}</span>
+<span class="go">keep_imp: all available, Observations excluded by user: {&#39;rows&#39;: 0, &#39;columns&#39;: 0}</span>
+<span class="go">keep_exp: all available, Observations excluded by user: {&#39;rows&#39;: 0, &#39;columns&#39;: 0}</span>
+<span class="go">drop_years: none, Observations excluded by user: {&#39;rows&#39;: 0, &#39;columns&#39;: 0}</span>
+<span class="go">keep_years: [2015], Observations excluded by user: {&#39;rows&#39;: 94952, &#39;columns&#39;: 0}</span>
+<span class="go">drop_missing: yes, Observations excluded by user: {&#39;rows&#39;: 0, &#39;columns&#39;: 0}</span>
+<span class="go">Estimation began at 08:09 AM  on Oct 16, 2018</span>
+<span class="go">Omitted Columns: [&#39;importer_fe_ARG&#39;, &#39;importer_fe_AUT&#39;, &#39;importer_fe_BEL&#39;, &#39;importer_fe_CHN&#39;, &#39;importer_fe_COL&#39;, &#39;importer_fe_DZA&#39;, &#39;importer_fe_EGY&#39;, &#39;importer_fe_GHA&#39;, &#39;importer_fe_IDN&#39;, &#39;importer_fe_IRN&#39;, &#39;importer_fe_ISR&#39;, &#39;importer_fe_KEN&#39;, &#39;importer_fe_KOR&#39;, &#39;importer_fe_KWT&#39;, &#39;importer_fe_LBY&#39;, &#39;importer_fe_MAR&#39;, &#39;importer_fe_NGA&#39;, &#39;importer_fe_NLD&#39;, &#39;importer_fe_PAK&#39;, &#39;importer_fe_SAU&#39;, &#39;importer_fe_SGP&#39;, &#39;importer_fe_THA&#39;, &#39;importer_fe_TUN&#39;, &#39;importer_fe_TWN&#39;, &#39;importer_fe_URY&#39;, &#39;importer_fe_VEN&#39;, &#39;importer_fe_ZAF&#39;]</span>
+<span class="go">Estimation completed at 08:09 AM  on Oct 16, 2018</span>
+</pre></div>
+
+<p>The results are stored in a collection (called dictionary in Python) with each sector having its own set of results. If no sectors were supplied or used, there would be only one set of results in the dictionary, labeled 'all'.</p>
+<p>A simple table with regression results can be produced with the following command: </p>
+<p><div class="codehilite"><pre><span></span><span class="n">gme_model</span><span class="o">.</span><span class="n">format_regression_table</span><span class="p">(</span><span class="n">format</span> <span class="o">=</span> <span class="s2">&quot;txt&quot;</span><span class="p">)</span>
+</pre></div>
+which produces the regression results:
+<div class="codehilite"><pre><span></span><span class="go">                             Variable                all</span>
+<span class="go">a_agree_pta                 agree_pta           0.338***</span>
+<span class="go">a_agree_pta_se                                   (0.088)</span>
+<span class="go">a_common_language     common_language              0.063</span>
+<span class="go">a_common_language_se                             (0.071)</span>
+<span class="go">a_contiguity               contiguity           0.211***</span>
+<span class="go">a_contiguity_se                                  (0.085)</span>
+<span class="go">a_exporter_fe_ARG     exporter_fe_ARG             -0.444</span>
+<span class="go">a_exporter_fe_ARG_se                             (0.365)</span>
+<span class="go">a_exporter_fe_AUS     exporter_fe_AUS              0.619</span>
+<span class="go">a_exporter_fe_AUS_se                             (0.500)</span>
+<span class="go">                               ...                ...</span>
+<span class="go">a_importer_fe_USA     importer_fe_USA          30.791***</span>
+<span class="go">a_importer_fe_USA_se                             (0.562)</span>
+<span class="go">a_log_distance           log_distance          -0.784***</span>
+<span class="go">a_log_distance_se                                (0.051)</span>
+<span class="go">b_aic                             AIC  1806014725995.581</span>
+<span class="go">b_bic                             BIC  1806014667986.696</span>
+<span class="go">b_llf                      Likelihood   -903007362899.79</span>
+<span class="go">b_nobs                           Obs.               2040                                </span>
+</pre></div></p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href=".." title="Introduction" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Introduction
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../estimation_tutorial/" title="Estimation" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Estimation
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="http://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.b438e6c5.js"></script>
+      
+      <script>app.initialize({version:"0.17.3",url:{base:".."}})</script>
+      
+    
+    
+      
+    
+  </body>
+</html>
