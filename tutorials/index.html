@@ -14,7 +14,7 @@
     
     
       
-        <title>Estimation - GME Package Documentation</title>
+        <title>Tutorials - GME Package Documentation</title>
       
     
     
@@ -61,7 +61,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#estimating-a-gravity-model" class="md-skip">
+        <a href="#tutorials" class="md-skip">
           Skip to content
         </a>
       
@@ -93,7 +93,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Estimation
+              Tutorials
             
           </span>
         </div>
@@ -223,14 +223,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
       
       
       
@@ -251,72 +249,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Estimation
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../estimation_tutorial/" class="md-nav__link">
         Estimation
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#load-data" class="md-nav__link">
-    Load Data
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#working-with-estimationdata" class="md-nav__link">
-    Working with EstimationData
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#creating-and-estimating-a-model" class="md-nav__link">
-    Creating and estimating a model
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#viewing-formatting-and-outputting-the-results" class="md-nav__link">
-    Viewing, formatting, and outputting the results
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -624,30 +561,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#tutorial-1-estimating-a-gravity-model" class="md-nav__link">
+    Tutorial 1 - Estimating a Gravity Model
+  </a>
+  
+    <nav class="md-nav" aria-label="Tutorial 1 - Estimating a Gravity Model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#load-data" class="md-nav__link">
     Load Data
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#working-with-estimationdata" class="md-nav__link">
-    Working with EstimationData
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#creating-and-estimating-a-model" class="md-nav__link">
-    Creating and estimating a model
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#viewing-formatting-and-outputting-the-results" class="md-nav__link">
-    Viewing, formatting, and outputting the results
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -664,89 +593,66 @@
               
                 
                 
-                <h1 id="estimating-a-gravity-model">Estimating a Gravity Model</h1>
-<p>This tutorial demonstrates a basic gravity analysis including loading data, constructing some summary statistics, estimating a model, and outputting the results in several possible formats. For more information, see the list of commands and API reference in this documentation.</p>
+                <h1 id="tutorials">Tutorials</h1>
+<p>The following tutorials are meant to introduce users to the gme package and help them become proficcient with many of the features that it offers.</p>
+<ul>
+<li><strong>Tutorial 1 - Estimating a Gravity Model</strong>: This example demonstrates a basic gravity analysis including loading data, constructing some summary statistics, estimating a model, and outputing the results in several possible formats.</li>
+</ul>
+<h2 id="tutorial-1-estimating-a-gravity-model">Tutorial 1 - Estimating a Gravity Model</h2>
 <h3 id="load-data">Load Data</h3>
-<p>The gme package uses a special object, called gme.EstimationData to store data. EstimationData includes a <a href="https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html">Pandas.DataFrame</a> containing data (trade + gravity + etc.) for estimation as well as additional information about that data and methods that can be used to summarize and/or manipulate the data.  This tutorial will demonstrate some of these features.</p>
-<p>First, we must begin by creating a gme.EstimationData.  Doing so requires the inputting of a Pandas.DataFrame and several pieces of "meta-data" that describe the data. Start by loading a dataset using the <em>read_csv()</em> function from pandas.  In the sample code below, we will read a dataset directly from the internet, but you could just as easily read the same file from your hard drive.</p>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;</span> <span class="o">&gt;</span>
-<span class="kn">from</span> <span class="nn">src</span> <span class="kn">import</span> <span class="n">gme</span> <span class="k">as</span> <span class="n">gme</span>
-<span class="o">&gt;&gt;</span> <span class="o">&gt;</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-
-<span class="o">&gt;&gt;</span> <span class="o">&gt;</span> <span class="n">gravity_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://www.usitc.gov/data/gravity/example_trade_and_grav_data_small.csv&#39;</span><span class="p">)</span>
-
-<span class="o">&gt;&gt;</span> <span class="o">&gt;</span> <span class="n">gravity_data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-<span class="n">importer</span>
-<span class="n">exporter</span>
-<span class="n">year</span>
-<span class="n">trade_value</span>
-<span class="n">agree_pta</span>
-<span class="n">common_language</span>
-    <span class="mi">0</span>
-<span class="n">AUS</span>
-<span class="n">BRA</span>
-<span class="mi">1989</span>
-<span class="mf">3.035469e+08</span>
-<span class="mf">0.0</span>
-<span class="mf">1.0</span>
-<span class="mi">1</span>
-<span class="n">AUS</span>
-<span class="n">CAN</span>
-<span class="mi">1989</span>
-<span class="mf">8.769946e+08</span>
-<span class="mf">0.0</span>
-<span class="mf">1.0</span>
-<span class="mi">2</span>
-<span class="n">AUS</span>
-<span class="n">CHE</span>
-<span class="mi">1989</span>
-<span class="mf">4.005245e+08</span>
-<span class="mf">0.0</span>
-<span class="mf">1.0</span>
-<span class="mi">3</span>
-<span class="n">AUS</span>
-<span class="n">DEU</span>
-<span class="mi">1989</span>
-<span class="mf">2.468977e+09</span>
-<span class="mf">0.0</span>
-<span class="mf">0.0</span>
-<span class="mi">4</span>
-<span class="n">AUS</span>
-<span class="n">DNK</span>
-<span class="mi">1989</span>
-<span class="mf">1.763072e+08</span>
-<span class="mf">0.0</span>
-<span class="mf">1.0</span>
-
-<span class="n">contiguity</span>
-<span class="n">log_distance</span>
-<span class="mi">0</span>
-<span class="mf">0.0</span>
-<span class="mf">9.553332</span>
-<span class="mi">1</span>
-<span class="mf">0.0</span>
-<span class="mf">9.637676</span>
-<span class="mi">2</span>
-<span class="mf">0.0</span>
-<span class="mf">9.687557</span>
-<span class="mi">3</span>
-<span class="mf">0.0</span>
-<span class="mf">9.675007</span>
-<span class="mi">4</span>
-<span class="mf">0.0</span>
-<span class="mf">9.657311</span>
-
-<span class="c1"># Next, we use the loaded data to create an EstimationData instance called gme_data</span>
-<span class="o">&gt;&gt;</span> <span class="o">&gt;</span> <span class="n">gme_data</span> <span class="o">=</span> <span class="n">gme</span><span class="o">.</span><span class="n">EstimationData</span><span class="p">(</span><span class="n">data_frame</span><span class="o">=</span><span class="n">gravity_data</span><span class="p">,</span>
-                                   <span class="n">imp_var_name</span><span class="o">=</span><span class="s1">&#39;importer&#39;</span><span class="p">,</span>
-                                   <span class="n">exp_var_name</span><span class="o">=</span><span class="s1">&#39;exporter&#39;</span><span class="p">,</span>
-                                   <span class="n">trade_var_name</span><span class="o">=</span><span class="s1">&#39;trade_value&#39;</span><span class="p">,</span>
-                                   <span class="n">year_var_name</span><span class="o">=</span><span class="s1">&#39;year&#39;</span><span class="p">,</span>
-                                   <span class="n">notes</span><span class="o">=</span><span class="s1">&#39;Downloaded from https://www.usitc.gov/data/gravity/example_trade_and_grav_data_small.csv&#39;</span><span class="p">)</span>
+<p>The gme package uses a special object to manage data: the gme.EstimationData.  The data can be thought of as a specialized Pandas DataFrame.<sup id="fnref:DataFrame"><a class="footnote-ref" href="#fn:DataFrame">1</a></sup>  The EstimationData features a Pandas.DataFrame containing data (trade + gravity + etc.) for estimation as well as additional information about that data and methods that can be used to summarize and/or manipulate the data.  This tutorial will demonstrate some of these features.</p>
+<p>First, we must begin by creating a gme.EstimationData.  Doing so requires the inputting of a Pandas.DataFrame and several pieces of "meta-data" that describe the data. Start by loading a dataset using the <em>read_csv()</em> function from pandas.  In the sample code below, we will read a dataset directly from the internet, but you could just as easily read the same file from you hard drive. </p>
+<p>```python tab="Code and output"</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>import gme as gme
+import pandas as pd</p>
+<p>gravity_data = pd.read_csv('https://www.usitc.gov/data/gravity/example_trade_and_grav_data_small.csv')</p>
+<p>gravity_data.head()
+  importer exporter  year   trade_value  agree_pta  common_language  \
+0      AUS      BRA  1989  3.035469e+08        0.0              1.0 <br />
+1      AUS      CAN  1989  8.769946e+08        0.0              1.0 <br />
+2      AUS      CHE  1989  4.005245e+08        0.0              1.0 <br />
+3      AUS      DEU  1989  2.468977e+09        0.0              0.0 <br />
+4      AUS      DNK  1989  1.763072e+08        0.0              1.0 </p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>contiguity  log_distance<br />
+0         0.0      9.553332<br />
+1         0.0      9.637676<br />
+2         0.0      9.687557<br />
+3         0.0      9.675007<br />
+4         0.0      9.657311 </p>
+<h1 id="next-we-use-the-loaded-data-to-create-a-estimationdata">Next, we use the loaded data to create a EstimationData</h1>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>gme_data = gme.EstimationData(data_frame=gravity_data,
+                              imp_var_name='importer',
+                              exp_var_name='exporter',
+                              trade_var_name='trade_value',
+                              year_var_name='year',
+                              notes='Downloaded from https://www.usitc.gov/data/gravity/example_trade_and_grav_data_small.csv')
+<div class="highlight"><pre><span></span><code>```Python tab=&quot;Code only&quot;
+import gme as gme
+import pandas as pd
+gravity_data = pd.read_csv(&#39;https://www.usitc.gov/data/gravity/example_trade_and_grav_data_small.csv&#39;)
+gravity_data.head()
+gme_data = gme.EstimationData(data_frame=gravity_data,
+                              imp_var_name=&#39;importer&#39;,
+                              exp_var_name=&#39;exporter&#39;,
+                              trade_var_name=&#39;trade_value&#39;,
+                              year_var_name=&#39;year&#39;,
+                              notes=&#39;Downloaded from https://www.usitc.gov/data/gravity/example_trade_and_grav_data_small.csv&#39;)
 </code></pre></div>
-<p>In creating an instance of the EstimationData object, the user is asked to supply a Pandas.DataFrame, which we a loaded in the previous lines, and several types of descriptive arguments. These arguments (<em>imp_var_name</em>, <em>exp_var_name</em>, <em>trade_var_name</em>, and <em>year_var_name</em>) specify the columns in the supplied DataFrame corresponding to particular types of information that will likely be present in any gravity analysis (the column containing the importer ID, exporter ID, trade values, and year, respectively). These "meta-data" fields can be useful as they prevent users from having to re-enter these same basic characteristics of the data at later points and permit the automatic construction of certain types of summary information. Finally, an optional <em>note</em> is supplied to the EstimationData. The EstimationData object has a attribute that stores a list user-supplied strings for later reference. In this case, we have supplied a note indicating from where the data originated.</p>
-<h3 id="working-with-estimationdata">Working with EstimationData</h3>
-<p>In addition to providing an object class that communicates conveniently with the gme.EstimationModel (see below), the EstimationData provides a collection of data summary and manipulation tools.  For example, simply calling (or printing) the object, returns a summary of the scope of the data:</p>
+In creating the EstimationData object, the user is asked to supply a Pandas.DataFrame, which we a loaded in the previous lines, and several types of descriptive arguments. These arguments (<em>imp_var_name</em>, <em>exp_var_name</em>, <em>trade_var_name</em>, and <em>year_var_name</em>) specify the columns in the supplied DataFrame corresponding to particular types of information that will likely be present in any gravity analysis (the column containing the importer ID, exporter ID, trade values, and year, respectively). These "meta-data" fields can be useful as they prevent users from having to re-enter these same basic characteristics of the data at later points and permit the automatic construction of certain types of summary information. Finally, an optional <em>note</em> is supplied to the EstimationData. The EstimationData object has a attribute that stores a list user-supplied strings for later reference. In this case, we have supplied a note indicating from where the data originated.</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h3 id="working-with-the-estimationdata">Working with the EstimationData</h3>
+<p>In addition to providing a object class that communicates conveniently with the gme.EstimationModel (see below), the EstimationData provides a collection of data summary and manipulation tools.  For example, simply calling (or printing) the object, returns a summary of the scope of the data:</p>
 <p><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">gme_data</span>
 <span class="n">number</span> <span class="n">of</span> <span class="n">countries</span><span class="p">:</span> <span class="mi">62</span> 
 <span class="n">number</span> <span class="n">of</span> <span class="n">exporters</span><span class="p">:</span> <span class="mi">62</span> 
@@ -755,7 +661,7 @@
 <span class="n">number</span> <span class="n">of</span> <span class="n">sectors</span><span class="p">:</span> <span class="n">not_applicable</span> 
 <span class="n">dimensions</span><span class="p">:</span> <span class="p">(</span><span class="mi">98612</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
 </code></pre></div>
-As can be seen from the console return, the dataset we are using covers 62 importers and exporters, 27 years, and contains 98,612 rows and 8 columns. Because this particular dataset does not have multiple sectors, that field is marked as 'not applicable'.<sup id="fnref:sector_var_name"><a class="footnote-ref" href="#fn:sector_var_name">1</a></sup> </p>
+As can be seen from the console return, the dataset we are using covers 62 importers and exporters, 27 years, and contains 98,612 rows and 8 columns. Because this particular dataset does not have multiple sectors, that field is marked as 'not applicable'.<sup id="fnref:sector_var_name"><a class="footnote-ref" href="#fn:sector_var_name">2</a></sup> </p>
 <p>Other summary information can be reported in the following ways:
 <div class="highlight"><pre><span></span><code><span class="c1"># Return the number of importers in the dataset.</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">gme_data</span><span class="o">.</span><span class="n">number_of_importers</span>
@@ -861,7 +767,7 @@ As can be seen from the console return, the dataset we are using covers 62 impor
 <span class="mi">3</span>           <span class="mf">8.223088</span>          <span class="mf">5.061335</span>          <span class="mf">9.824095</span>  
 <span class="mi">4</span>           <span class="mf">9.090685</span>          <span class="mf">7.150738</span>          <span class="mf">9.874070</span>
 
-<span class="c1"># Calculate mean, standard deviation, and count of trade for each importer/exporter pair.</span>
+<span class="c1"># Calculate mean, standard deviation, and count of trade for each imoprter/exporter pair.</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">aggregated_data_2</span> <span class="o">=</span> <span class="n">gme_data</span><span class="o">.</span><span class="n">tabulate_by_group</span><span class="p">(</span>
                                 <span class="n">tab_variables</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;trade_value&#39;</span><span class="p">],</span>
                                 <span class="n">by_group</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;importer&#39;</span><span class="p">,</span><span class="s1">&#39;exporter&#39;</span><span class="p">],</span>
@@ -879,11 +785,13 @@ As can be seen from the console return, the dataset we are using covers 62 impor
 <p><strong>Knowing when to end a command with <em>( )</em>:</strong> When first learning python, it can be confusing trying to determine when a command applied to an object should be followed by parentheses. In the preceding code example, you will see instances of both: <em>gme_data.columns</em> and <em>gme_data.year_list( )</em>, for example.  Knowing which format to use is largely a matter of becoming familiar with the functions you are using.  However, there is a logic to it.  Each time a command is applied to an object (i.e. using the syntax <em>object.command</em>), you are calling either an <strong>attribute</strong> of the object or a <strong>method</strong> on the object.  An attribute is a piece of information that has already been created and included in the object whereas a method is effectively a function that can be run on the object.  A method will be called with two parentheses because they will often accept additional arguments. For example, this is the case with the DataFrame method <em>head( )</em>, which can accept a user-provided number of rows.  However, you will often find that you do not need to supply additional arguments to a method, in which case you leave the parentheses empty.  An attribute, by comparison, does not feature <em>( )</em> because there is no need or ability to provide additional input because the contents of that attribute have already been computed. As mentioned before, knowing whether a command is an attribute or a method, however, simply requires familiarity with the object.  </p>
 </div>
 <h3 id="creating-and-estimating-a-model">Creating and estimating a model</h3>
-<p>Once a EstimationData has been created, estimating a gravity model using the data is fairly straightforward.  There are two basic step for estimation: (1) define a model and (2) estimate the model.</p>
-<p>Defining the model amounts to creating another object called <em>EstimationModel</em>.  Like the EstimationData, EstimationModel is meant to standardize and simplify the steps typically taken to specify and estimate a gravity model.  While the EstimationData is meant to be an object that is created once for each study, many EstimationModels will likely be defined and redefined as you test different specifications. Thus, the arguments and attributes of the EstimationModel reflect the different types of modifications you may want to make as you select your preferred specification. </p>
-<p>As with the EstimationData, the EstimationModel is largely a dataset, with added information that define the characteristics of the particular model. The following examples depict several model specifications, each demonstrating different types of model aspects that can be specified.</p>
+<p>Once a EstimationData has been created, estimating a gravity model using the data is fairly straight forward.  There are two basic step for estimation.
+1. Define a model
+2. Estimate the model</p>
+<p>Defining the model amounts to creating another object called a <em>EstimationModel</em>.  Like the EstimationData, the Estimation model is meant to standardize and simplify the steps typically taken to specify and estimate a gravity model.  While the EstimationData is meant to be an object that is created once for each study, many EstimationModels will likely be defined and redefined as you test different specifications. Thus, the arguments and attributes of the EstimationModel reflect the different types of modifications you may want to make as you select your preferred specification. </p>
+<p>As with the EstimationData, the EstimationModel is largely a dataset---this time in the form of the EstimationData---with added information that define the characteristics of the particular model. The following example depict several model specifications, each demonstrating different types of model aspects that can be specified.</p>
 <p><div class="highlight"><pre><span></span><code><span class="c1"># A simple case in which &#39;trade_value&#39; is dependent on &#39;log_distance&#39;, &#39;agree_pta&#39;, etc.</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">model_baseline</span> <span class="o">=</span> <span class="n">gme</span><span class="o">.</span><span class="n">EstimationModel</span><span class="p">(</span><span class="n">estimation_data</span> <span class="o">=</span> <span class="n">gme_data</span><span class="p">,</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">model_baseline</span> <span class="o">=</span> <span class="n">gme</span><span class="o">.</span><span class="n">EstimationModel</span><span class="p">(</span><span class="n">data_object</span> <span class="o">=</span> <span class="n">gme_data</span><span class="p">,</span>
                                          <span class="n">lhs_var</span> <span class="o">=</span> <span class="s1">&#39;trade_value&#39;</span><span class="p">,</span>
                                          <span class="n">rhs_var</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;log_distance&#39;</span><span class="p">,</span>
                                                     <span class="s1">&#39;agree_pta&#39;</span><span class="p">,</span> 
@@ -892,7 +800,7 @@ As can be seen from the console return, the dataset we are using covers 62 impor
 
 <span class="c1"># A specification that will generate and include importer-year and exporter-year</span>
 <span class="c1"># fixed effects                                                    </span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">fixed_effects_model</span>  <span class="o">=</span> <span class="n">gme</span><span class="o">.</span><span class="n">EstimationModel</span><span class="p">(</span><span class="n">estimation_data</span> <span class="o">=</span> <span class="n">gme_data</span><span class="p">,</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">fixed_effects_model</span>  <span class="o">=</span> <span class="n">gme</span><span class="o">.</span><span class="n">EstimationModel</span><span class="p">(</span><span class="n">data_object</span> <span class="o">=</span> <span class="n">gme_data</span><span class="p">,</span>
                                  <span class="n">lhs_var</span> <span class="o">=</span> <span class="s1">&#39;trade_value&#39;</span><span class="p">,</span>
                                  <span class="n">rhs_var</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;log_distance&#39;</span><span class="p">,</span>
                                             <span class="s1">&#39;agree_pta&#39;</span><span class="p">,</span> 
@@ -903,7 +811,7 @@ As can be seen from the console return, the dataset we are using covers 62 impor
 
 <span class="c1"># A specification that uses a subset of the data. The United States (&#39;USA&#39;) will be omitted</span>
 <span class="c1"># and only the years 2013--2015 will be included.</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">data_subset_model</span> <span class="o">=</span> <span class="n">gme</span><span class="o">.</span><span class="n">EstimationModel</span><span class="p">(</span><span class="n">estimation_data</span> <span class="o">=</span> <span class="n">gme_data</span><span class="p">,</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">data_subset_model</span> <span class="o">=</span> <span class="n">gme</span><span class="o">.</span><span class="n">EstimationModel</span><span class="p">(</span><span class="n">data_object</span> <span class="o">=</span> <span class="n">gme_data</span><span class="p">,</span>
                                             <span class="n">lhs_var</span> <span class="o">=</span> <span class="s1">&#39;trade_value&#39;</span><span class="p">,</span>
                                             <span class="n">rhs_var</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;log_distance&#39;</span><span class="p">,</span>
                                                        <span class="s1">&#39;agree_pta&#39;</span><span class="p">,</span> 
@@ -912,15 +820,15 @@ As can be seen from the console return, the dataset we are using covers 62 impor
                                             <span class="n">drop_imp_exp</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;USA&#39;</span><span class="p">],</span>
                                             <span class="n">keep_years</span><span class="o">=</span><span class="p">[</span><span class="mi">2015</span><span class="p">,</span> <span class="mi">2014</span><span class="p">,</span> <span class="mi">2013</span><span class="p">])</span>                                                  
 </code></pre></div>
-When specifying a model, there are several key types of attributes that can be included:</p>
+When specifying the model, there are several key types of attributes that can be included.</p>
 <ul>
 <li><strong>Model Variables</strong>: The variables to be included are specified using the arguments <em>lhs_vars</em> and <em>rhs_vars</em>, which denote the left-hand-side dependent variable and right-hand-side independent variables, respectively.</li>
-<li><strong>Fixed Effects</strong>: The model, at the point at which it is estimated, will construct fixed effects if any are specified by <em>fixed_effects</em>.  These can be either single variables (e.g. ['importer']), or interacted variables (e.g. [['importer', 'year']]). For example, entering [ 'importer', ['exporter', 'year']] would yield a set of importer fixed effects and a set of exporter-year fixed effects.  </li>
+<li><strong>Fixed Effects</strong>: The model, at the point at which it is estimated, will constructed fixed effects if any are specified by <em>fixed_effects</em>.  These can be either single variables (e.g. ['importer']), or interacted variables (e.g. ['importer', 'year']).</li>
 <li><strong>Data Subsets</strong>: Subsets of the data to use for estimation can be specified in a variety of ways. The arguments <em>keep_years</em> and <em>drop_years</em> can be used to select only a subset of years to include. Similarly the <em>keep_imp</em>, <em>keep_exp</em>, and <em>keep_imp_exp</em> arguments, and their corresponding <em>drop_...</em> options can do the same for importers and/or exporters. </li>
 </ul>
-<p>Once a model has been defined, running a PPML estimation according to the supplied specification is quite straightforward. It only requires the application of a single method of the EstimationModel: <em>.estimate()</em>.  No further inputs are required.</p>
+<p>Once a model has been defined, running a PPML estimation according to the supplied specification is quite straightforward, it only requires the application of a single method of the EstimationModel: <em>.estimate()</em>.  No further inputs are required.</p>
 <p><div class="highlight"><pre><span></span><code><span class="c1"># Define a new, fixed effects model using only a subset of years (to reduce the computation time)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">fixed_effects_model_2</span>  <span class="o">=</span> <span class="n">gme</span><span class="o">.</span><span class="n">EstimationModel</span><span class="p">(</span><span class="n">estimation_data</span> <span class="o">=</span> <span class="n">gme_data</span><span class="p">,</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">fixed_effects_model_2</span>  <span class="o">=</span> <span class="n">gme</span><span class="o">.</span><span class="n">EstimationModel</span><span class="p">(</span><span class="n">data_object</span> <span class="o">=</span> <span class="n">gme_data</span><span class="p">,</span>
                                                  <span class="n">lhs_var</span> <span class="o">=</span> <span class="s1">&#39;trade_value&#39;</span><span class="p">,</span>
                                                  <span class="n">rhs_var</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;log_distance&#39;</span><span class="p">,</span>
                                                             <span class="s1">&#39;agree_pta&#39;</span><span class="p">,</span> 
@@ -944,9 +852,9 @@ When specifying a model, there are several key types of attributes that can be i
 <span class="n">Estimation</span> <span class="n">began</span> <span class="n">at</span> <span class="mi">08</span><span class="p">:</span><span class="mi">58</span> <span class="n">AM</span>  <span class="n">on</span> <span class="n">Jun</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">2018</span>
 <span class="n">Estimation</span> <span class="n">completed</span> <span class="n">at</span> <span class="mi">08</span><span class="p">:</span><span class="mi">58</span> <span class="n">AM</span>  <span class="n">on</span> <span class="n">Jun</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">2018</span>
 </code></pre></div>
- The results (<em>estimates</em>) are stored as a dictionary with each entry in the dictionary corresponding to a single estimation.<sup id="fnref:results_dict"><a class="footnote-ref" href="#fn:results_dict">2</a></sup>  The storing of the results in this way is primarily to facilitate the <em>sector_by_sector</em>, which separately estimates a model for each product/industry/sector, and returns a set of estimation results for each.  In the case in which multiple sectors are not considered, as in the examples considered here, the results dictionary contains a single entry with the key 'all'.  </p>
+ The results (<em>estimates</em>) are stored as a dictionary with each entry in the dictionary corresponding to a single estimation.<sup id="fnref:results_dict"><a class="footnote-ref" href="#fn:results_dict">3</a></sup>  The storing of the results in this way is primarily to facilitate the <em>sector_by_sector</em>, which separately estimates a model for each product/industry/sector, and returns a set of estimation results for each.  In the case in which multiple sectors are not considered, as in the examples considered here, the results dictionary contains a single entry with the key 'all'.  </p>
 <h3 id="viewing-formatting-and-outputting-the-results">Viewing, formatting, and outputting the results</h3>
-<p>The first step to viewing and working with the regression estimates is unpacking them from the dictionary in which they have been stored. A dictionary is an object in which each item stored in the dictionary is associated with a key.  That key can be used to return its associated item. In the above example, <em>estimates</em> is a dictionary in which each item is an object of results. In our example there is only one object because only one regression was run. In cases in which multiple regressions are run because multiple sectors are estimated separately, the dictionary would contain multiple results, each keyed with the name of the respective sector. 
+<p>The first step to viewing and working with the regression estimates is unpacking them from the dictionary in which they have been stored. A dictionary is an object in which each item stored in the dictionary is associated with a key.  That key can be used to return its associated item. In the above example, <em>estimates</em> is a dictionary in which each item is an object of results. In this tutorial, there is only one object in this case because only one regression was run. In cases in which multiple regressions are run because multiple sectors are estimated separately, the dictionary would contain multiple results, each keyed with the name of the respective sector. 
 <div class="highlight"><pre><span></span><code><span class="c1"># Return a list of keys in the object</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">estimates</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
 <span class="n">dict_keys</span><span class="p">([</span><span class="s1">&#39;all&#39;</span><span class="p">])</span>
@@ -954,7 +862,7 @@ When specifying a model, there are several key types of attributes that can be i
 <span class="c1"># Return the result object and save it to a new variable for convenience </span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">results</span> <span class="o">=</span> <span class="n">estimates</span><span class="p">[</span><span class="s1">&#39;all&#39;</span><span class="p">]</span>
 </code></pre></div></p>
-<p>The estimation uses tools from the <em>statsmodels</em> package so that the results inherit all of the features of the <em>statsmodels</em> GLM results object.<sup id="fnref:statsmodels"><a class="footnote-ref" href="#fn:statsmodels">3</a></sup>  This means that the object contains a plethora of fields reflecting things like coefficient estimates, standard errors, p-values, AIC/BIC, etc.  Similarly, there is a useful method associated with the object that can be used for creating summary tables.</p>
+<p>The estimation uses tools from the <em>statsmodels</em> package so that the results inherit all of the features of the <em>statsmodels</em> GLM results object.<sup id="fnref:statsmodels"><a class="footnote-ref" href="#fn:statsmodels">4</a></sup>  This means that the object contains a plethora of fields reflecting things like coefficient estimates, standard errors, p-values, AIC/BIC, etc.  Similarly, there is a useful method associated with the object that can be used for creating summary tables.</p>
 <p><div class="highlight"><pre><span></span><code><span class="c1"># print a summary of the results</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">results</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
 <span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">statsmodels</span><span class="o">.</span><span class="n">iolib</span><span class="o">.</span><span class="n">summary</span><span class="o">.</span><span class="n">Summary</span><span class="s1">&#39;&gt;</span>
@@ -984,7 +892,7 @@ When specifying a model, there are several key types of attributes that can be i
 
 <span class="c1"># Extract the estimated parameter values (returned as a Pandas.Series)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">coefficients</span> <span class="o">=</span> <span class="n">results</span><span class="o">.</span><span class="n">params</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">coefficients</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">coefficients</span><span class="p">,</span><span class="n">head</span><span class="p">()</span>
 <span class="n">log_distance</span>                <span class="o">-</span><span class="mf">0.739840</span>
 <span class="n">agree_pta</span>                    <span class="mf">0.334219</span>
 <span class="n">common_language</span>              <span class="mf">0.128770</span>
@@ -1034,7 +942,7 @@ The estimate method also provides some diagnostic information that helps judge t
 </code></pre></div></p>
 <p>The gme package also features several tools to help compile and format the results for use within python or outside of it.  These tools include one method named <em>combine_sector_results()</em> for pulling all coefficients, standard errors, and p-values from from multiple sectors into a single DataFrame. The second, called <em>format_regression_tables</em>, creates formatted tables for presentation that can be exported as a text file, csv file, or LaTeX file with some stylized syntax.</p>
 <p><div class="highlight"><pre><span></span><code><span class="c1"># Collect coefficients, standard errors, and p-values from the regression results.</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">combined_results</span> <span class="o">=</span> <span class="n">fixed_effects_model_2</span><span class="o">.</span><span class="n">combine_sector_results</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">combined_results</span> <span class="o">=</span> <span class="n">fixed_effects_model_2</span><span class="o">.</span><span class="n">combine_sector_results</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">combined_results</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
                           <span class="n">all_coeff</span>     <span class="n">all_pvalue</span>              <span class="n">all_stderr</span>
 <span class="n">log_distance</span>              <span class="o">-</span><span class="mf">0.739840</span>  <span class="mf">9.318804e-211</span>  <span class="p">(</span><span class="mf">0.023879411125052336</span><span class="p">)</span>
@@ -1071,20 +979,22 @@ The estimate method also provides some diagnostic information that helps judge t
 It is also worth noting that the commands <em>combine_sector_results()</em> and <em>format_regression_tables()</em> can both be used in one of two ways.  They are both stand-alone functions that can be supplied dictionaries of results (produced directly from the EstimationModel or custom assembled by a user), as in the <em>format_regression_table()</em> example.  Alternatively, both can be used as methods on the EstimationObject itself, as in the <em>combine_sector_results()</em> example.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p><strong>LaTeX users</strong>: The method <em>format_regression_table</em> can output a table into a csv file with some desired LaTeX syntax. This can be done by specifying <em>format = '.csv'</em> and <em>'latex_syntax'=True</em>. This option allows users to manipulate the tables in spreadsheet software while retaining LaTeX syntax.  We recommend reading the file into the spreadsheet software as 'text data' so that it does not try to interpret the formatting of the table entries. </p>
+<p><strong>LaTeX users</strong>: The method <em>format_regression_table</em> can output a table into a csv file with some desired LaTeX syntax. This can be done by specifying <em>format = '.csv'</em> and <em>'latex_syntax'=True</em>. This option allows users manipulate the tables in spreadsheet software while retaining LaTeX syntax.  We recommend reading the file into the spreadsheet software as 'text data' so that it does not try to interpret the formatting of the table entries. </p>
 </div>
-<p>The gme package also has several ways to save the results to a file, either in full or in a space-saving slim version. See the API Reference portion of this documentation for further information. </p>
 <div class="footnote">
 <hr />
 <ol>
+<li id="fn:DataFrame">
+<p>See <a href="https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html">https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html</a> for more information on Pandas DataFrames.&#160;<a class="footnote-backref" href="#fnref:DataFrame" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
 <li id="fn:sector_var_name">
-<p>Had their been multiple sectors, we could have indicated so by adding the input <em>sector_var_name = 'sector_column'</em> in the declaration of the EstimationData.&#160;<a class="footnote-backref" href="#fnref:sector_var_name" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p>Had their been multiple sectors, we could have indicated so by adding the input <em>sector_var_name = 'sector_column'</em> in the declaration of the EstimationData.&#160;<a class="footnote-backref" href="#fnref:sector_var_name" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 <li id="fn:results_dict">
-<p>Additionally, the results of the estimation are saved as a attribute of the estimation model---<em>EstimationModel.results_dict</em>---and can be retrieved that way as well.&#160;<a class="footnote-backref" href="#fnref:results_dict" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+<p>Additionally, the results of the estimation are saved as a attribute of the estimation model---<em>EstimationModel.results_dict</em>---and can be retrieved that way as well.&#160;<a class="footnote-backref" href="#fnref:results_dict" title="Jump back to footnote 3 in the text">&#8617;</a></p>
 </li>
 <li id="fn:statsmodels">
-<p>For more details about the <em>statsmodels</em> results object, see <a href="http://www.statsmodels.org/0.6.1/generated/statsmodels.genmod.generalized_linear_model.GLMResults.html">http://www.statsmodels.org/0.6.1/generated/statsmodels.genmod.generalized_linear_model.GLMResults.html</a>.&#160;<a class="footnote-backref" href="#fnref:statsmodels" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+<p>For more details about the <em>statsmodels</em> results object, see <a href="http://www.statsmodels.org/0.6.1/generated/statsmodels.genmod.generalized_linear_model.GLMResults.html">http://www.statsmodels.org/0.6.1/generated/statsmodels.genmod.generalized_linear_model.GLMResults.html</a>.&#160;<a class="footnote-backref" href="#fnref:statsmodels" title="Jump back to footnote 4 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
@@ -1103,41 +1013,6 @@ It is also worth noting that the commands <em>combine_sector_results()</em> and 
       
         
 <footer class="md-footer">
-  
-    <nav class="md-footer__inner md-grid" aria-label="Footer">
-      
-        
-        <a href="../getting_started/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Getting started" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              Getting started
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../estimate_technical/" class="md-footer__link md-footer__link--next" aria-label="Next: Methodology" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Methodology
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

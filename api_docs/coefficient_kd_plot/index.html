@@ -14,7 +14,7 @@
     
     
       
-        <title>combine_sector_results - GME Package Documentation</title>
+        <title>coefficient_kd_plot - GME Package Documentation</title>
       
     
     
@@ -93,7 +93,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              combine_sector_results
+              coefficient_kd_plot
             
           </span>
         </div>
@@ -445,6 +445,20 @@
               
   
   
+  
+    <li class="md-nav__item">
+      <a href="../combine_sector_results/" class="md-nav__link">
+        combine_sector_results
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
     
   
   
@@ -455,12 +469,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          combine_sector_results
+          coefficient_kd_plot
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        combine_sector_results
+        coefficient_kd_plot
       </a>
       
         
@@ -497,8 +511,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#returns" class="md-nav__link">
-    Returns
+  <a href="#return" class="md-nav__link">
+    Return
   </a>
   
 </li>
@@ -514,20 +528,6 @@
   
 </nav>
       
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../coefficient_kd_plot/" class="md-nav__link">
-        coefficient_kd_plot
-      </a>
     </li>
   
 
@@ -648,8 +648,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#returns" class="md-nav__link">
-    Returns
+  <a href="#return" class="md-nav__link">
+    Return
   </a>
   
 </li>
@@ -674,54 +674,45 @@
               
                 
                 
-                  <h1>combine_sector_results</h1>
+                  <h1>coefficient_kd_plot</h1>
                 
                 <h2 id="function">Function</h2>
-<p><strong>combine_sector_results</strong>(<em>result_dict:dict = None,
-                            write_path:str = None,
-                            significance_stars: bool = False,
-                            round_results: int = None,
-                            latex_syntax: bool = True</em>)</p>
+<p>gme.<strong>coefficient_kd_plot</strong>(<em>estimation_model: EstimationModel,
+                        variables: List[str],
+                        path: str = None,
+                        bandwidth: float = 0.5,
+                        rename_variables: dict = None</em>):</p>
 <h2 id="description">Description</h2>
-<p>Extract key result fields (coefficients, standard errors, and p-values) and combine them in a DataFrame. Has the option to write the data to a .csv file with or without extra value formatting options.</p>
+<p>Produce kernel density plots of parameter estimates across different sectors in the results dictionary.</p>
 <h2 id="arguments">Arguments</h2>
 <dl>
-<dt><strong>result_dict</strong>: <em>Dict[statsmodels.genmod.generalized_linear_model.GLMResultsWrapper]</em> </dt>
-  <dd><p>A dictionary of GLM fit objects as returned by gme.EsimationModel.estimate()</p></dd>
+<dt><strong>estimation_model</strong>: <em>gme.EstimationModel</em></dt>
+ <dd><p>An estimated EstimationModel with more than one sector.</p></dd>
 
-<dt><strong>write_path</strong>: (optional) <em>str</em> </dt>
-  <dd><p>A system location and file name in which to write a csv file containing the combined results. </p></dd>
+<dt><strong>variables</strong>: <em>List[str]</em></dt>
+ <dd><p>A list of model covariates for which to plot kernel densities.</p></dd>
 
-<dt><strong>significance_stars</strong>: <em>bool</em> </dt>
-  <dd><p>If true, combined results are output with significance stars. \*\*\*&#60;0.01, \*\*&#60;0.05, and \*&#60;0.10. Default is False.</p></dd>
+<dt><strong>path</strong>: <em>(optional) str</em></dt>
+ <dd><p>A path and file name at which to save the plot. Can end in the following file types for example: pdf, svg, and png.</p></dd>
 
-<dt><strong>round_results</strong>: (optional) <em>int</em> </dt>
-  <dd><p>Rounds combined results to the desired decimal place.</p></dd>
+<dt><strong>bandwidth</strong>: <em>float</em></dt>
+ <dd><p>Specify the bandwidth for the density plots. The default is 0.5.</p></dd>
 
-<dt><strong>latex_syntax</strong>: <em>bool</em> </dt>
-  <dd><p>If True, reports aspects of results, such as significance stars, using standard latex syntax.</p></dd>
+<dt><strong>rename_variables</strong>: <em>(optional)</em></dt>
+ <dd><p>A dictionary of alternative variable names to use in the plot. For example {'original_name':'new_name'}</p></dd>
+
 </dl>
-<h2 id="returns">Returns</h2>
-<p><strong>Returns</strong>: <em>Pandas.DataFrame</em> 
-  A DataFrame containing combined GLM results for all results in the supplied dictionary.</p>
+<h2 id="return">Return</h2>
+<p><em>None</em>, plots a figure and, if specified, writes it to a file.</p>
 <h2 id="examples">Examples</h2>
-<div class="highlight"><pre><span></span><code><span class="c1"># Using a gme.EstimationModel named &#39;sample_model&#39;.</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">sample_results</span> <span class="o">=</span> <span class="n">sample_model</span><span class="o">.</span><span class="n">estimate</span><span class="p">()</span>
-
-<span class="c1"># Return a dataframe of results</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">result_df</span> <span class="o">=</span> <span class="n">combine_sector_results</span><span class="p">(</span><span class="n">sample_results</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">result_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-                          <span class="n">all_coeff</span>     <span class="n">all_pvalue</span>   <span class="n">all_stderr</span>
-<span class="n">log_distance</span>              <span class="o">-</span><span class="mf">0.739840</span>  <span class="mf">9.318804e-211</span>     <span class="mf">0.023879</span>
-<span class="n">agree_pta</span>                  <span class="mf">0.334219</span>   <span class="mf">5.134355e-15</span>     <span class="mf">0.042719</span>
-<span class="n">common_language</span>            <span class="mf">0.128770</span>   <span class="mf">1.076932e-03</span>     <span class="mf">0.039383</span>
-<span class="n">contiguity</span>                 <span class="mf">0.255161</span>   <span class="mf">5.857612e-08</span>     <span class="mf">0.047050</span>
-<span class="n">importer_year_fe_ARG2013</span>  <span class="mf">26.980367</span>   <span class="mf">0.000000e+00</span>     <span class="mf">0.361228</span>
-
-<span class="c1"># Export table as a .csv file</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">combine_sector_results</span><span class="p">(</span><span class="n">sample_results</span><span class="p">,</span>
-<span class="o">...</span>                        <span class="n">round_results</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> 
-<span class="o">...</span>                        <span class="n">path</span> <span class="o">=</span> <span class="s1">&#39;c:</span><span class="se">\\</span><span class="s1">Documents</span><span class="se">\\</span><span class="s1">combined_results_saved.csv&#39;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">est_model</span> <span class="o">=</span> <span class="n">EstimationModel</span><span class="p">(</span><span class="n">est_data</span><span class="p">,</span> <span class="n">lhs_var</span><span class="o">=</span><span class="s1">&#39;trade_value&#39;</span><span class="p">,</span>
+                               <span class="n">rhs_var</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;contiguity&#39;</span><span class="p">,</span> <span class="s1">&#39;agree_pta&#39;</span><span class="p">,</span> <span class="s1">&#39;border&#39;</span><span class="p">,</span> <span class="s1">&#39;colony&#39;</span><span class="p">,</span> <span class="s1">&#39;ln_dist&#39;</span><span class="p">],</span>
+                               <span class="n">fixed_effects</span><span class="o">=</span><span class="p">[[</span><span class="s1">&#39;importer&#39;</span><span class="p">,</span> <span class="s1">&#39;year&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;exporter&#39;</span><span class="p">,</span> <span class="s1">&#39;year&#39;</span><span class="p">]],</span>
+                               <span class="n">sector_by_sector</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">est_model</span><span class="o">.</span><span class="n">estimate</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">coefficient_kd_plot</span><span class="p">(</span><span class="n">est_model</span><span class="p">,</span> <span class="n">variables</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;contiguity&#39;</span><span class="p">,</span> <span class="s1">&#39;agree_pta&#39;</span><span class="p">,</span> <span class="s1">&#39;border&#39;</span><span class="p">,</span> <span class="s1">&#39;colony&#39;</span><span class="p">,</span> <span class="s1">&#39;ln_dist&#39;</span><span class="p">],</span>
+                        <span class="n">rename_variables</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;agree_pta&#39;</span><span class="p">:</span><span class="s1">&#39;PTA&#39;</span><span class="p">,</span> <span class="s1">&#39;ln_dist&#39;</span><span class="p">:</span><span class="s1">&#39;distance&#39;</span><span class="p">},</span>
+                        <span class="n">path</span> <span class="o">=</span> <span class="s1">&#39;C:\kd_plot.eps&#39;</span><span class="p">)</span>
 </code></pre></div>
                 
               
@@ -742,7 +733,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../format_regression_table/" class="md-footer__link md-footer__link--prev" aria-label="Previous: format_regression_table" rel="prev">
+        <a href="../combine_sector_results/" class="md-footer__link md-footer__link--prev" aria-label="Previous: combine_sector_results" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -751,20 +742,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              format_regression_table
+              combine_sector_results
             </div>
           </div>
         </a>
       
       
         
-        <a href="../coefficient_kd_plot/" class="md-footer__link md-footer__link--next" aria-label="Next: coefficient_kd_plot" rel="next">
+        <a href="../load_estimation/" class="md-footer__link md-footer__link--next" aria-label="Next: load_estimation" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              coefficient_kd_plot
+              load_estimation
             </div>
           </div>
           <div class="md-footer__button md-icon">

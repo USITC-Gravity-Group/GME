@@ -14,7 +14,7 @@
     
     
       
-        <title>combine_sector_results - GME Package Documentation</title>
+        <title>make_data_square - GME Package Documentation</title>
       
     
     
@@ -93,7 +93,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              combine_sector_results
+              make_data_square
             
           </span>
         </div>
@@ -314,12 +314,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_1" type="checkbox" id="__nav_6_1" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_1" type="checkbox" id="__nav_6_1" checked>
       
       
       
@@ -354,11 +356,61 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../make_data_square/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          make_data_square
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         make_data_square
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#function" class="md-nav__link">
+    Function
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arguments" class="md-nav__link">
+    Arguments
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -375,14 +427,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_2" type="checkbox" id="__nav_6_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_2" type="checkbox" id="__nav_6_2" >
       
       
       
@@ -445,75 +495,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          combine_sector_results
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../combine_sector_results/" class="md-nav__link">
         combine_sector_results
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#function" class="md-nav__link">
-    Function
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#description" class="md-nav__link">
-    Description
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#arguments" class="md-nav__link">
-    Arguments
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#returns" class="md-nav__link">
-    Returns
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#examples" class="md-nav__link">
-    Examples
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -647,20 +633,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#returns" class="md-nav__link">
-    Returns
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#examples" class="md-nav__link">
-    Examples
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -674,54 +646,62 @@
               
                 
                 
-                  <h1>combine_sector_results</h1>
+                  <h1>make_data_square</h1>
                 
                 <h2 id="function">Function</h2>
-<p><strong>combine_sector_results</strong>(<em>result_dict:dict = None,
-                            write_path:str = None,
-                            significance_stars: bool = False,
-                            round_results: int = None,
-                            latex_syntax: bool = True</em>)</p>
+<p>gme.<strong>make_data_square</strong>(<em>trade_dataframe=None,
+                     imp_var_name: str = "importer",
+                     exp_var_name: str = "exporter",
+                     multiple_sectors: bool = False,
+                     sector_var_name: str = None,
+                     year_var_name: str = "year",
+                     drop_intratrade: bool = True,
+                     year_by_year: bool = True</em>):</p>
 <h2 id="description">Description</h2>
-<p>Extract key result fields (coefficients, standard errors, and p-values) and combine them in a DataFrame. Has the option to write the data to a .csv file with or without extra value formatting options.</p>
+<p>Expand countries and sectors by adding zero-valued trade flows to make the panel square.</p>
 <h2 id="arguments">Arguments</h2>
 <dl>
-<dt><strong>result_dict</strong>: <em>Dict[statsmodels.genmod.generalized_linear_model.GLMResultsWrapper]</em> </dt>
-  <dd><p>A dictionary of GLM fit objects as returned by gme.EsimationModel.estimate()</p></dd>
-
-<dt><strong>write_path</strong>: (optional) <em>str</em> </dt>
-  <dd><p>A system location and file name in which to write a csv file containing the combined results. </p></dd>
-
-<dt><strong>significance_stars</strong>: <em>bool</em> </dt>
-  <dd><p>If true, combined results are output with significance stars. \*\*\*&#60;0.01, \*\*&#60;0.05, and \*&#60;0.10. Default is False.</p></dd>
-
-<dt><strong>round_results</strong>: (optional) <em>int</em> </dt>
-  <dd><p>Rounds combined results to the desired decimal place.</p></dd>
-
-<dt><strong>latex_syntax</strong>: <em>bool</em> </dt>
-  <dd><p>If True, reports aspects of results, such as significance stars, using standard latex syntax.</p></dd>
+<dt> <strong>trade_dataframe</strong>: <em>pd.DataFrame</em></dt>
+<dd><p>A DataFrame containing trade values and observation identifiers (importer, exporter, year, and (optionally) sector). </p></dd>
 </dl>
-<h2 id="returns">Returns</h2>
-<p><strong>Returns</strong>: <em>Pandas.DataFrame</em> 
-  A DataFrame containing combined GLM results for all results in the supplied dictionary.</p>
-<h2 id="examples">Examples</h2>
-<div class="highlight"><pre><span></span><code><span class="c1"># Using a gme.EstimationModel named &#39;sample_model&#39;.</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">sample_results</span> <span class="o">=</span> <span class="n">sample_model</span><span class="o">.</span><span class="n">estimate</span><span class="p">()</span>
 
-<span class="c1"># Return a dataframe of results</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">result_df</span> <span class="o">=</span> <span class="n">combine_sector_results</span><span class="p">(</span><span class="n">sample_results</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">result_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-                          <span class="n">all_coeff</span>     <span class="n">all_pvalue</span>   <span class="n">all_stderr</span>
-<span class="n">log_distance</span>              <span class="o">-</span><span class="mf">0.739840</span>  <span class="mf">9.318804e-211</span>     <span class="mf">0.023879</span>
-<span class="n">agree_pta</span>                  <span class="mf">0.334219</span>   <span class="mf">5.134355e-15</span>     <span class="mf">0.042719</span>
-<span class="n">common_language</span>            <span class="mf">0.128770</span>   <span class="mf">1.076932e-03</span>     <span class="mf">0.039383</span>
-<span class="n">contiguity</span>                 <span class="mf">0.255161</span>   <span class="mf">5.857612e-08</span>     <span class="mf">0.047050</span>
-<span class="n">importer_year_fe_ARG2013</span>  <span class="mf">26.980367</span>   <span class="mf">0.000000e+00</span>     <span class="mf">0.361228</span>
+<dt> 
+<strong>imp_var_name</strong>: str</dt>
+<dd><p>The name of the column containing importer identifiers.</p></dd>
 
-<span class="c1"># Export table as a .csv file</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">combine_sector_results</span><span class="p">(</span><span class="n">sample_results</span><span class="p">,</span>
-<span class="o">...</span>                        <span class="n">round_results</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> 
-<span class="o">...</span>                        <span class="n">path</span> <span class="o">=</span> <span class="s1">&#39;c:</span><span class="se">\\</span><span class="s1">Documents</span><span class="se">\\</span><span class="s1">combined_results_saved.csv&#39;</span><span class="p">)</span>
+<dt> <strong>exp_var_name</strong>: <em>str</em></dt>
+<dd><p>The name of the column containing exporter identifiers.</p></dd>
+
+<dl>
+<dt> <strong>multiple_sectors</strong>: <em>bool</em></dt>
+ <dd><p>If true, the data is squared for each sector as well. Default is False.</p></dd>
+
+
+<dt> <strong>sector_var_name</strong>: <em>(optional) str</em></dt>
+<dd><p> The name of the column containing sector identifiers. Must be supplied if squaring for each section (i.e. if multiple_sectors = True).</p></dd>
+
+
+<dt> <strong>year_var_name</strong>: <em>(optional) str</em> </dt>
+ <dd><p>The name of the column containing year identifiers.</p></dd>
+
+
+<dt> <strong>drop_intratrade</strong>: <em>bool</em></dt>
+ <dd><p>If True, the returned data will not contain intranational observations in which the importer and exporter are the same country. Default is True.</p></dd>
+
+
+<dt> <strong>year_by_year</strong>: <em>bool</em></dt>
+<dd><p>If true, the data is squared on a year by year basis, which allows the dimensions to differ each year. For example, it lets the set of countries or sectors around which the data is squared to differ each year. Doing so reduces the likelihood of including countries or sectors with zero trade activity in certain years.</p></dd>
+
+## Returns
+<strong>Returns</strong>: <em>Pandas.DataFrame</em>
+ A square dataset.
+
+## Examples
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">raw_data</span> <span class="o">=</span>  <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://www.usitc.gov/data/gravity/example_trade_and_grav_data_small.csv&#39;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">trade_data</span> <span class="o">=</span> <span class="n">raw_data</span><span class="p">[[</span><span class="s1">&#39;importer&#39;</span><span class="p">,</span> <span class="s1">&#39;exporter&#39;</span><span class="p">,</span> <span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="s1">&#39;trade_value&#39;</span><span class="p">]]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">square_data</span> <span class="o">=</span> <span class="n">make_data_square</span><span class="p">(</span><span class="n">trade_data</span><span class="p">,</span> <span class="n">imp_var_name</span><span class="o">=</span><span class="s1">&#39;importer&#39;</span><span class="p">,</span> <span class="n">exp_var_name</span><span class="o">=</span><span class="s1">&#39;exporter&#39;</span><span class="p">,</span>
+                                <span class="n">multiple_sectors</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">year_var_name</span><span class="o">=</span><span class="s1">&#39;year&#39;</span><span class="p">,</span>
+                                <span class="n">drop_intratrade</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">year_by_year</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </code></pre></div>
                 
               
@@ -742,7 +722,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../format_regression_table/" class="md-footer__link md-footer__link--prev" aria-label="Previous: format_regression_table" rel="prev">
+        <a href="../EstimationData/" class="md-footer__link md-footer__link--prev" aria-label="Previous: EstimationData" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -751,20 +731,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              format_regression_table
+              EstimationData
             </div>
           </div>
         </a>
       
       
         
-        <a href="../coefficient_kd_plot/" class="md-footer__link md-footer__link--next" aria-label="Next: coefficient_kd_plot" rel="next">
+        <a href="../EstimationModel/" class="md-footer__link md-footer__link--next" aria-label="Next: EstimationModel" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              coefficient_kd_plot
+              EstimationModel
             </div>
           </div>
           <div class="md-footer__button md-icon">

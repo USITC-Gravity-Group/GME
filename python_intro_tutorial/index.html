@@ -1,0 +1,1273 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.3">
+    
+    
+      
+        <title>Introduction to Python - GME Package Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.5143246d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introduction-to-python" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="GME Package Documentation" class="md-header__button md-logo" aria-label="GME Package Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            GME Package Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Introduction to Python
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="GME Package Documentation" class="md-nav__button md-logo" aria-label="GME Package Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    GME Package Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../updates/" class="md-nav__link">
+        What's New in v1.3
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting_started/" class="md-nav__link">
+        Getting started
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Tutorials
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Tutorials" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Tutorials
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../estimation_tutorial/" class="md-nav__link">
+        Estimation
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../estimate_technical/" class="md-nav__link">
+        Methodology
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          API Reference
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="API Reference" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          API Reference
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_1" type="checkbox" id="__nav_6_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_1">
+          Data Construction
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Data Construction" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_1">
+          <span class="md-nav__icon md-icon"></span>
+          Data Construction
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api_docs/EstimationData/" class="md-nav__link">
+        EstimationData
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api_docs/make_data_square/" class="md-nav__link">
+        make_data_square
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_2" type="checkbox" id="__nav_6_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_2">
+          Model Estimation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Model Estimation" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_2">
+          <span class="md-nav__icon md-icon"></span>
+          Model Estimation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api_docs/EstimationModel/" class="md-nav__link">
+        EstimationModel
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api_docs/estimate_method/" class="md-nav__link">
+        estimate
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api_docs/format_regression_table/" class="md-nav__link">
+        format_regression_table
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api_docs/combine_sector_results/" class="md-nav__link">
+        combine_sector_results
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api_docs/coefficient_kd_plot/" class="md-nav__link">
+        coefficient_kd_plot
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api_docs/load_estimation/" class="md-nav__link">
+        load_estimation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api_docs/save_estimation/" class="md-nav__link">
+        save_estimation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api_docs/SlimResults/" class="md-nav__link">
+        SlimResults
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about/" class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#basic-python-concepts-and-syntax" class="md-nav__link">
+    Basic Python Concepts and Syntax
+  </a>
+  
+    <nav class="md-nav" aria-label="Basic Python Concepts and Syntax">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#computation" class="md-nav__link">
+    Computation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variables-and-types" class="md-nav__link">
+    Variables and  Types
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logical-operators-and-decision-tests" class="md-nav__link">
+    Logical Operators and Decision Tests
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iteration" class="md-nav__link">
+    Iteration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    Functions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-manipulation-and-regression-analysis" class="md-nav__link">
+    Data Manipulation and Regression Analysis
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Manipulation and Regression Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#importing-tools" class="md-nav__link">
+    Importing tools
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#load-data" class="md-nav__link">
+    Load Data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working-with-the-data" class="md-nav__link">
+    Working With the Data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estimation" class="md-nav__link">
+    Estimation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#saving-the-results" class="md-nav__link">
+    Saving the results
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="introduction-to-python">Introduction to Python</h1>
+<p>This tutorial demonstrates some basic python concepts and syntax that are integral for working with the GME package.  Additionally, it demonstrates aspects of the <em>pandas</em> package, which provides a collection of data tools that are both a major part of the GME tools and exceptionally useful for data analysis in Python.  This tutorial is far from comprehensive, even when it comes to basic usage, but should help you become sufficiently well versed to begin working with the GME package. </p>
+<h2 id="basic-python-concepts-and-syntax">Basic Python Concepts and Syntax</h2>
+<h3 id="computation">Computation</h3>
+<p>One of the most fundamental processes is basic arithmetic.</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="mi">2</span><span class="o">+</span><span class="mi">2</span>
+<span class="mi">4</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">3</span><span class="o">*</span><span class="mi">5</span>
+<span class="mi">15</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="mi">10</span><span class="p">)</span><span class="o">/</span><span class="mi">16</span> <span class="o">+</span> <span class="mi">14</span>
+<span class="mf">15.875</span>
+</code></pre></div>
+<h3 id="variables-and-types">Variables and  Types</h3>
+<p>Variables can be used to store information for further interaction.
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">16</span>
+<span class="c1"># The variable you want to assign is on the left side, the value you want to set it to is on the right.</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">c</span> <span class="o">=</span> <span class="n">a</span><span class="o">*</span><span class="n">b</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">)</span>
+<span class="mi">16</span> <span class="mi">10</span> <span class="mi">160</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span><span class="o">=</span><span class="mi">25</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">c</span><span class="o">=</span><span class="n">a</span><span class="o">*</span><span class="n">b</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">)</span>
+<span class="mi">16</span> <span class="mi">25</span> <span class="mi">400</span>
+</code></pre></div></p>
+<p>Variables and data more broadly are much more expansive than just integers. The following is a non-exhaustive list of the data types you will frequently use.</p>
+<p><strong>Integers</strong>: (<em>int</em>) A simple number without decimal points.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># The type() function returns the data type of the argument.</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span> 
+<span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">int</span><span class="s1">&#39;&gt;</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">int</span><span class="s1">&#39;&gt;</span>
+</code></pre></div>
+<p><strong>Float</strong>: (<em>float</em>) A number with decimal places.
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="mf">3.25</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">float</span><span class="s1">&#39;&gt;</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="p">(</span><span class="o">.</span><span class="mi">5</span><span class="p">))</span>
+<span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">float</span><span class="s1">&#39;&gt;</span>
+
+<span class="c1"># you can also specify the type you would like a value to take</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">a</span><span class="p">))</span> 
+<span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">float</span><span class="s1">&#39;&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="mf">16.0</span>
+</code></pre></div></p>
+<p><strong>String</strong>: (<em>str</em>) Non-numeric characters. Strings are denoted by wrapping characters in either single or double
+ quotes (e.g. ' '  or " ").
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">str_example</span> <span class="o">=</span> <span class="s1">&#39;Hello World!&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">str_example</span><span class="p">)</span>
+<span class="n">Hello</span> <span class="n">World</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="n">str_example</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">str</span><span class="s1">&#39;&gt;</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="s2">&quot;12&quot;</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">str</span><span class="s1">&#39;&gt;</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">str</span><span class="s1">&#39;&gt;</span>
+
+<span class="c1"># We can also combine (concatenate) strings</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;12&quot;</span> <span class="o">+</span> <span class="s2">&quot;14&quot;</span><span class="p">)</span>
+<span class="mi">1214</span>
+</code></pre></div></p>
+<p><strong>Boolean</strong>: (<em>bool</em>) A binary type that equals True or False</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">boolean_example</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="n">boolean_example</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">bool</span><span class="s1">&#39;&gt;</span>
+</code></pre></div>
+<p><strong>List</strong>: (<em>list</em>) A list contains a series of values and, potentially, types. They are created using square brackets (e.g. [ ] )</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">list_example</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">25</span><span class="p">,</span><span class="mi">37</span><span class="p">,</span><span class="mi">22</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="n">list_example</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">list</span><span class="s1">&#39;&gt;</span>
+
+<span class="c1"># They are indexed</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">list_example</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># Square brackets denote indexes in a list. i.e. the zeroth element of list_example in this case</span>
+<span class="mi">1</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">list_example</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+<span class="mi">37</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">list_example</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span> <span class="c1"># and sliceable</span>
+<span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">25</span><span class="p">]</span>
+
+<span class="c1"># They can also contain other data types</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">list_example_2</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;This&quot;</span><span class="p">,</span> <span class="s2">&quot;list&quot;</span><span class="p">,</span><span class="s2">&quot;contains&quot;</span><span class="p">,</span> <span class="s1">&#39;strings&#39;</span><span class="p">,</span> <span class="nb">float</span><span class="p">(</span><span class="mf">22.134</span><span class="p">),</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">list_example_2</span><span class="p">)</span>
+<span class="p">[</span><span class="s1">&#39;This&#39;</span><span class="p">,</span> <span class="s1">&#39;list&#39;</span><span class="p">,</span> <span class="s1">&#39;contains&#39;</span><span class="p">,</span> <span class="s1">&#39;strings&#39;</span><span class="p">,</span> <span class="mf">22.134</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">400</span><span class="p">]</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="n">list_example_2</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">str</span><span class="s1">&#39;&gt;</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="n">list_example_2</span><span class="p">[</span><span class="mi">7</span><span class="p">])</span>
+<span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">int</span><span class="s1">&#39;&gt;</span>
+
+<span class="c1"># They can be combined</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">list_example_3</span> <span class="o">=</span> <span class="n">list_example</span> <span class="o">+</span> <span class="n">list_example_2</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">list_example_3</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">37</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="s1">&#39;This&#39;</span><span class="p">,</span> <span class="s1">&#39;list&#39;</span><span class="p">,</span> <span class="s1">&#39;contains&#39;</span><span class="p">,</span> <span class="s1">&#39;strings&#39;</span><span class="p">,</span> <span class="mf">22.134</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">400</span><span class="p">]</span>
+
+<span class="c1"># They can be added to</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">list_example</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;last&#39;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">list_example</span><span class="p">)</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">37</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="s1">&#39;last&#39;</span><span class="p">]</span>
+
+<span class="c1"># and can be counted/measured</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">list_example_3</span><span class="p">)</span>
+<span class="mi">13</span>
+</code></pre></div>
+<p><strong>Tuple</strong>: (<em>tuple</em>) A tuple is similar to a list except that it's size and order is fixed. Many of the other features
+ hold from lists but the inability to change the shape or order may offer some desirable protections in your code.
+ They are declared using parentheses (e.g. ( ) ).</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">tuple_example</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="n">tuple_example</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">tuple</span><span class="s1">&#39;&gt;</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">tuple_example</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="mi">16</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">tuple_example</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;new element&#39;</span><span class="p">)</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">Traceback (most recent call last):</span>
+<span class="sd">  File &quot;&lt;input&gt;&quot;, line 1, in &lt;module&gt;</span>
+<span class="sd">AttributeError: &#39;tuple&#39; object has no attribute &#39;append&#39;</span>
+<span class="sd">&#39;&#39;&#39;</span>
+</code></pre></div>
+<p><strong>Dictionary</strong>: (<em>dict</em>) A dictionary is a very useful datatype which, like a list or tuple, can contain a series of values. However, it has the added feature that elements are 'keyed', such that each value is associated with a key. # The dictionary is declared using curly braces (e.g.  { } ). Within the dictionary, a key (str) is followed by a colon then the value to assign to that key (e.g. key:value = 'first':'peter') </p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">dictionary_example</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;first&#39;</span><span class="p">:</span><span class="s1">&#39;Karl&#39;</span><span class="p">,</span><span class="s1">&#39;last&#39;</span><span class="p">:</span><span class="s1">&#39;Marx&#39;</span><span class="p">,</span><span class="s1">&#39;job&#39;</span><span class="p">:</span><span class="s1">&#39;economist&#39;</span><span class="p">,</span> <span class="s1">&#39;ext&#39;</span><span class="p">:</span><span class="mi">3186</span><span class="p">}</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">dictionary_example</span><span class="p">)</span>
+<span class="p">{</span><span class="s1">&#39;first&#39;</span><span class="p">:</span> <span class="s1">&#39;Karl&#39;</span><span class="p">,</span> <span class="s1">&#39;last&#39;</span><span class="p">:</span> <span class="s1">&#39;Marx&#39;</span><span class="p">,</span> <span class="s1">&#39;job&#39;</span><span class="p">:</span> <span class="s1">&#39;economist&#39;</span><span class="p">,</span> <span class="s1">&#39;ext&#39;</span><span class="p">:</span> <span class="mi">3186</span><span class="p">,</span> <span class="s1">&#39;location&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;city&#39;</span><span class="p">:</span> <span class="s1">&#39;Washington&#39;</span><span class="p">,</span> <span class="s1">&#39;state&#39;</span><span class="p">:</span> <span class="s1">&#39;DC&#39;</span><span class="p">}}</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="n">dictionary_example</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">dict</span><span class="s1">&#39;&gt;</span>
+
+<span class="c1"># Dictionaries are indexed using the keys.</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">dictionary_example</span><span class="p">[</span><span class="s1">&#39;last&#39;</span><span class="p">]</span>
+<span class="s1">&#39;Marx&#39;</span>
+
+<span class="c1"># Can be added to by creating a new key.</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">dictionary_example</span><span class="p">[</span><span class="s1">&#39;location&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;city&#39;</span><span class="p">:</span><span class="s1">&#39;Washington&#39;</span><span class="p">,</span><span class="s1">&#39;state&#39;</span><span class="p">:</span><span class="s1">&#39;DC&#39;</span><span class="p">}</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">dictionary_example</span><span class="p">)</span>
+<span class="p">{</span><span class="s1">&#39;first&#39;</span><span class="p">:</span> <span class="s1">&#39;Karl&#39;</span><span class="p">,</span> <span class="s1">&#39;last&#39;</span><span class="p">:</span> <span class="s1">&#39;Marx&#39;</span><span class="p">,</span> <span class="s1">&#39;job&#39;</span><span class="p">:</span> <span class="s1">&#39;economist&#39;</span><span class="p">,</span> <span class="s1">&#39;ext&#39;</span><span class="p">:</span> <span class="mi">3186</span><span class="p">,</span> <span class="s1">&#39;location&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;city&#39;</span><span class="p">:</span> <span class="s1">&#39;Washington&#39;</span><span class="p">,</span> <span class="s1">&#39;state&#39;</span><span class="p">:</span> <span class="s1">&#39;DC&#39;</span><span class="p">}}</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">dictionary_example</span><span class="p">[</span><span class="s1">&#39;location&#39;</span><span class="p">][</span><span class="s1">&#39;city&#39;</span><span class="p">]</span> <span class="c1"># chained indexing</span>
+<span class="s1">&#39;Washington&#39;</span>
+
+<span class="c1"># The keys in a dictionary can be retrieved in the following way:</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">dictionary_example</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+<span class="n">dict_keys</span><span class="p">([</span><span class="s1">&#39;first&#39;</span><span class="p">,</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span> <span class="s1">&#39;job&#39;</span><span class="p">,</span> <span class="s1">&#39;ext&#39;</span><span class="p">,</span> <span class="s1">&#39;location&#39;</span><span class="p">])</span>
+</code></pre></div>
+<h3 id="logical-operators-and-decision-tests">Logical Operators and Decision Tests</h3>
+<p>Logical tests are a way of comparing things and performing conditional operations</p>
+<p><div class="highlight"><pre><span></span><code><span class="c1"># Lets create some initial (int) values to work with</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="o">=</span><span class="mi">10</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">y</span><span class="o">=</span><span class="mi">10</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">z</span><span class="o">=</span><span class="mi">5</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">==</span> <span class="n">y</span> <span class="c1"># &#39;==&#39;  tests the equivalence of the left and right side</span>
+<span class="kc">True</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">!=</span> <span class="n">y</span> <span class="c1"># &#39;!=&#39;  tests the non-equivalence of both sides</span>
+<span class="kc">False</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">==</span> <span class="p">(</span><span class="n">y</span> <span class="ow">and</span> <span class="n">z</span><span class="p">)</span> <span class="c1"># &#39;and&#39; tests the equivalence to both y *AND* z</span>
+<span class="kc">False</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">==</span> <span class="p">(</span><span class="n">y</span> <span class="ow">or</span> <span class="n">z</span><span class="p">)</span> <span class="c1"># &#39;or&#39; tests the equivalence to  y *OR* z</span>
+<span class="kc">True</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">z</span> <span class="c1"># inequalities work as expected with &#39;&gt;&#39;, &#39;&lt;&#39;, &#39;&gt;=&#39;, and &#39;&lt;=&#39;</span>
+<span class="kc">True</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="n">y</span>
+<span class="kc">True</span>
+
+<span class="c1"># Logical operators are especially useful with if statements</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">11</span><span class="p">:</span>
+<span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x is bigger than 11&#39;</span><span class="p">)</span>
+<span class="n">x</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">bigger</span> <span class="n">than</span> <span class="mi">11</span>
+
+<span class="c1"># or with &#39;else&#39; statements</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">11</span><span class="p">:</span>
+<span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x is bigger than 11&#39;</span><span class="p">)</span>
+<span class="o">...</span> <span class="k">else</span><span class="p">:</span>
+<span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x is not bigger than 11&#39;</span><span class="p">)</span>
+<span class="n">x</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">bigger</span> <span class="n">than</span> <span class="mi">11</span>
+</code></pre></div>
+In Python, statements are grouped by offsetting commands using tabs. Unlike many other languages that wrap statements like <em>if</em> with particular syntax like parentheses, braces, or specific begin and end statements, Python interprets things entirely based on tab indentation.  For example, a collection of commands belonging to a statement within another statement should be preceded by <em>two</em> tabs. </p>
+<h3 id="iteration">Iteration</h3>
+<p>One thing you will find very useful is the ability to automate and perform routine, repeating tasks. For loops are a useful tool for these tasks because they perform an action for each value in an 'iterable' object (e.g. a <em>list</em> or <em>tuple</em>)</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">iteration_sequence</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">iteration_sequence</span><span class="p">:</span> <span class="c1"># i gives the iteration value, iteration_sequence gives a (list) of values to iterate over,</span>
+<span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>                 <span class="c1"># : begins the loop.  a tab indent indicates commands to be interpreted in the loop.</span>
+                                 <span class="c1"># Unlike many languages, there is no closing statement for the loop, the indentation</span>
+                                 <span class="c1"># fully declares the scope of the command.</span>
+<span class="mi">0</span>
+<span class="mi">1</span>
+<span class="mi">2</span>
+<span class="mi">3</span>
+<span class="mi">4</span>
+
+
+<span class="c1"># Suppose we wanted to use this to make some calculation (e.g. a Fibonacci Sequence)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">fibonacci_sequence</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">20</span><span class="p">):</span>
+<span class="o">...</span>     <span class="n">next_number</span> <span class="o">=</span> <span class="n">fibonacci_sequence</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">fibonacci_sequence</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">2</span><span class="p">]</span> <span class="c1"># This adds the previous two entries in the (list)</span>
+<span class="o">...</span>     <span class="n">fibonacci_sequence</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">next_number</span><span class="p">)</span> <span class="c1"># this adds the new number to the end of the list</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">fibonacci_sequence</span><span class="p">)</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">89</span><span class="p">,</span> <span class="mi">144</span><span class="p">,</span> <span class="mi">233</span><span class="p">,</span> <span class="mi">377</span><span class="p">,</span> <span class="mi">610</span><span class="p">,</span> <span class="mi">987</span><span class="p">,</span> <span class="mi">1597</span><span class="p">,</span> <span class="mi">2584</span><span class="p">,</span> <span class="mi">4181</span><span class="p">,</span> <span class="mi">6765</span><span class="p">,</span> <span class="mi">10946</span><span class="p">]</span>
+
+<span class="c1"># You can also iterate on elements rather than sequential numbers</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">dictionary_serge</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;first&#39;</span><span class="p">:</span><span class="s1">&#39;Adam&#39;</span><span class="p">,</span><span class="s1">&#39;last&#39;</span><span class="p">:</span><span class="s1">&#39;Smith&#39;</span><span class="p">,</span><span class="s1">&#39;job&#39;</span><span class="p">:</span><span class="s1">&#39;economist&#39;</span><span class="p">,</span><span class="s1">&#39;location&#39;</span><span class="p">:{</span><span class="s1">&#39;city&#39;</span><span class="p">:</span><span class="s1">&#39;Arlington&#39;</span><span class="p">,</span><span class="s1">&#39;state&#39;</span><span class="p">:</span><span class="s1">&#39;VA&#39;</span><span class="p">}}</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">dictionary_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">dictionary_example</span><span class="p">,</span> <span class="n">dictionary_serge</span><span class="p">]</span> <span class="c1"># This creates a (list) of two (dictionaries)</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">person</span> <span class="ow">in</span> <span class="n">dictionary_list</span><span class="p">:</span> <span class="c1"># This time person is a dictionary rather than a simple index, and can be used that way</span>
+<span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The &#39;</span> <span class="o">+</span> <span class="n">person</span><span class="p">[</span><span class="s1">&#39;job&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="n">person</span><span class="p">[</span><span class="s1">&#39;first&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="n">person</span><span class="p">[</span><span class="s1">&#39;last&#39;</span><span class="p">]</span>
+<span class="o">...</span>           <span class="o">+</span> <span class="s1">&#39; lives in &#39;</span> <span class="o">+</span> <span class="n">person</span><span class="p">[</span><span class="s1">&#39;location&#39;</span><span class="p">][</span><span class="s1">&#39;city&#39;</span><span class="p">])</span>
+<span class="o">...</span>     <span class="k">if</span> <span class="n">person</span><span class="p">[</span><span class="s1">&#39;location&#39;</span><span class="p">][</span><span class="s1">&#39;state&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;DC&#39;</span><span class="p">:</span>
+<span class="o">...</span>         <span class="n">person</span><span class="p">[</span><span class="s1">&#39;statehood&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="o">...</span>     <span class="k">else</span><span class="p">:</span>
+<span class="o">...</span>         <span class="n">person</span><span class="p">[</span><span class="s1">&#39;statehood&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">The</span> <span class="n">economist</span> <span class="n">Karl</span> <span class="n">Marx</span> <span class="n">lives</span> <span class="ow">in</span> <span class="n">Washington</span>
+<span class="n">The</span> <span class="n">economist</span> <span class="n">Adam</span> <span class="n">Smith</span> <span class="n">lives</span> <span class="ow">in</span> <span class="n">Arlington</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">dictionary_list</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;statehood&#39;</span><span class="p">],</span><span class="n">dictionary_list</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;statehood&#39;</span><span class="p">])</span>
+<span class="kc">False</span> <span class="kc">True</span>
+</code></pre></div>
+<h3 id="functions">Functions</h3>
+<p>Functions provide a way of packaging and generalizing a routine task. A function is defined using the <em>def</em> command</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Lets work on generalizing the fibonacci calculation</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">fibonacci_nums</span><span class="p">(</span><span class="n">sequence_length</span><span class="p">):</span> <span class="c1"># &#39;def&#39; tells python that you are about to define a function</span>
+<span class="o">...</span>                                      <span class="c1"># &#39;fibonacci_nums&#39; is the name of the fucntion</span>
+<span class="o">...</span>                                      <span class="c1"># &#39;sequence_length&#39; is an input to be supplied to the function</span>
+<span class="o">...</span>     <span class="n">fibonacci_sequence</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
+<span class="o">...</span>     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">sequence_length</span><span class="p">):</span>
+<span class="o">...</span>         <span class="n">next_number</span> <span class="o">=</span> <span class="n">fibonacci_sequence</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">fibonacci_sequence</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">2</span><span class="p">]</span>  <span class="c1"># This adds the previous two entries in the (list)</span>
+<span class="o">...</span>         <span class="n">fibonacci_sequence</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">next_number</span><span class="p">)</span>  <span class="c1"># this adds the new number to the end of the list</span>
+<span class="o">...</span>     <span class="k">return</span> <span class="n">fibonacci_sequence</span> <span class="c1"># this determines what the function returns. In this case it is a list of fibonacci numbers</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">fibonacci_nums</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span> <span class="c1"># Lets test the new function</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">89</span><span class="p">,</span> <span class="mi">144</span><span class="p">,</span> <span class="mi">233</span><span class="p">,</span> <span class="mi">377</span><span class="p">,</span> <span class="mi">610</span><span class="p">,</span> <span class="mi">987</span><span class="p">,</span> <span class="mi">1597</span><span class="p">,</span> <span class="mi">2584</span><span class="p">,</span> <span class="mi">4181</span><span class="p">,</span> <span class="mi">6765</span><span class="p">,</span> <span class="mi">10946</span><span class="p">,</span> <span class="mi">17711</span><span class="p">,</span> <span class="mi">28657</span><span class="p">,</span> <span class="mi">46368</span><span class="p">,</span> <span class="mi">75025</span><span class="p">,</span> <span class="mi">121393</span><span class="p">,</span> <span class="mi">196418</span><span class="p">,</span> <span class="mi">317811</span><span class="p">,</span> <span class="mi">514229</span><span class="p">,</span> <span class="mi">832040</span><span class="p">,</span> <span class="mi">1346269</span><span class="p">]</span>
+</code></pre></div>
+<h2 id="data-manipulation-and-regression-analysis">Data Manipulation and Regression Analysis</h2>
+<p>The following with provide a basic crash course in using python to perform standard econometric/data analysis tasks.  Our reccomendation for this type of work is to use the <em>pandas</em> package, which contains data manipulation tools, and the <em>statsmodels</em> package, which contains statistical tools.  For users familiar with R, you should find the syntax and programming conventions of these packages very similar to those in R.</p>
+<h3 id="importing-tools">Importing tools</h3>
+<p>By default, python does not have a ton of tools.  Fortunately, others have written tons of them. For econometrics, we will be extensively using two: pandas, which is a data manipulation toolbox, and statsmodels, which is a statistical package (numpy, which a package for arrays, is useful too).</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="c1"># The &#39;pd&#39; gives a prefix that will be used to identify functions as coming from that package/module</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</code></pre></div>
+<h3 id="load-data">Load Data</h3>
+<p>Python (or, more accurately, pandas) has a robust set of tools for loading data in in a wide range of formats such as .csv, .dta (stata), or .xls (excel). For the sake of this tutorial, we will be loading some data from the internet via a URL. Most of the time, you will probably be loading data from a file location of your computer, which uses the same synatx with a file path replacing the URL.</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">loaded_trade_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span>
+<span class="o">...</span>     <span class="s1">&#39;https://www.usitc.gov/data/gravity/example_trade_and_grav_data_small.csv&#39;</span><span class="p">)</span>
+<span class="c1"># pd.read_csv() has created a Pandas DataFrame, which is the object that contains the data.</span>
+<span class="c1"># There are also read_excel, read_sql, read_stata, etc. versions of this function for a wide range of data file types.</span>
+
+<span class="c1"># To view the data, there are several options:</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">loaded_trade_data</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>  <span class="c1"># This prints the first 5 lines of the Dataframe</span>
+  <span class="n">importer</span> <span class="n">exporter</span>  <span class="n">year</span>   <span class="n">trade_value</span>  <span class="n">agree_pta</span>  <span class="n">common_language</span>  \
+<span class="mi">0</span>      <span class="n">AUS</span>      <span class="n">BRA</span>  <span class="mi">1989</span>  <span class="mf">3.035469e+08</span>        <span class="mf">0.0</span>              <span class="mf">1.0</span>   
+<span class="mi">1</span>      <span class="n">AUS</span>      <span class="n">CAN</span>  <span class="mi">1989</span>  <span class="mf">8.769946e+08</span>        <span class="mf">0.0</span>              <span class="mf">1.0</span>   
+<span class="mi">2</span>      <span class="n">AUS</span>      <span class="n">CHE</span>  <span class="mi">1989</span>  <span class="mf">4.005245e+08</span>        <span class="mf">0.0</span>              <span class="mf">1.0</span>   
+<span class="mi">3</span>      <span class="n">AUS</span>      <span class="n">DEU</span>  <span class="mi">1989</span>  <span class="mf">2.468977e+09</span>        <span class="mf">0.0</span>              <span class="mf">0.0</span>   
+<span class="mi">4</span>      <span class="n">AUS</span>      <span class="n">DNK</span>  <span class="mi">1989</span>  <span class="mf">1.763072e+08</span>        <span class="mf">0.0</span>              <span class="mf">1.0</span>   
+   <span class="n">contiguity</span>  <span class="n">log_distance</span>  
+<span class="mi">0</span>         <span class="mf">0.0</span>      <span class="mf">9.553332</span>  
+<span class="mi">1</span>         <span class="mf">0.0</span>      <span class="mf">9.637676</span>  
+<span class="mi">2</span>         <span class="mf">0.0</span>      <span class="mf">9.687557</span>  
+<span class="mi">3</span>         <span class="mf">0.0</span>      <span class="mf">9.675007</span>  
+<span class="mi">4</span>         <span class="mf">0.0</span>      <span class="mf">9.657311</span> 
+</code></pre></div>
+<h3 id="working-with-the-data">Working With the Data</h3>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">loaded_data</span><span class="o">.</span><span class="n">columns</span>   <span class="c1"># This prints the column headers</span>
+<span class="n">Index</span><span class="p">([</span><span class="s1">&#39;importer&#39;</span><span class="p">,</span> <span class="s1">&#39;exporter&#39;</span><span class="p">,</span> <span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="s1">&#39;trade_value&#39;</span><span class="p">,</span> <span class="s1">&#39;agree_pta&#39;</span><span class="p">,</span>
+       <span class="s1">&#39;common_language&#39;</span><span class="p">,</span> <span class="s1">&#39;contiguity&#39;</span><span class="p">,</span> <span class="s1">&#39;log_distance&#39;</span><span class="p">],</span>
+      <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;object&#39;</span><span class="p">)</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">loaded_data</span><span class="o">.</span><span class="n">shape</span>     <span class="c1"># Returns the dimensions of the data</span>
+<span class="p">(</span><span class="mi">98612</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">loaded_data</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>    <span class="c1"># Returns some useful info such as dtypes, memory usage, dimensions.</span>
+<span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">pandas</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">frame</span><span class="o">.</span><span class="n">DataFrame</span><span class="s1">&#39;&gt;</span>
+<span class="n">RangeIndex</span><span class="p">:</span> <span class="mi">98612</span> <span class="n">entries</span><span class="p">,</span> <span class="mi">0</span> <span class="n">to</span> <span class="mi">98611</span>
+<span class="n">Data</span> <span class="n">columns</span> <span class="p">(</span><span class="n">total</span> <span class="mi">8</span> <span class="n">columns</span><span class="p">):</span>
+<span class="n">importer</span>           <span class="mi">98612</span> <span class="n">non</span><span class="o">-</span><span class="n">null</span> <span class="nb">object</span>
+<span class="n">exporter</span>           <span class="mi">98612</span> <span class="n">non</span><span class="o">-</span><span class="n">null</span> <span class="nb">object</span>
+<span class="n">year</span>               <span class="mi">98612</span> <span class="n">non</span><span class="o">-</span><span class="n">null</span> <span class="n">int64</span>
+<span class="n">trade_value</span>        <span class="mi">98612</span> <span class="n">non</span><span class="o">-</span><span class="n">null</span> <span class="n">float64</span>
+<span class="n">agree_pta</span>          <span class="mi">97676</span> <span class="n">non</span><span class="o">-</span><span class="n">null</span> <span class="n">float64</span>
+<span class="n">common_language</span>    <span class="mi">97676</span> <span class="n">non</span><span class="o">-</span><span class="n">null</span> <span class="n">float64</span>
+<span class="n">contiguity</span>         <span class="mi">97676</span> <span class="n">non</span><span class="o">-</span><span class="n">null</span> <span class="n">float64</span>
+<span class="n">log_distance</span>       <span class="mi">97676</span> <span class="n">non</span><span class="o">-</span><span class="n">null</span> <span class="n">float64</span>
+<span class="n">dtypes</span><span class="p">:</span> <span class="n">float64</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span> <span class="n">int64</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="nb">object</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">memory</span> <span class="n">usage</span><span class="p">:</span> <span class="mf">6.0</span><span class="o">+</span> <span class="n">MB</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">loaded_data</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span> <span class="c1"># Some basic summary stats of the variables</span>
+               <span class="n">year</span>   <span class="n">trade_value</span>     <span class="n">agree_pta</span>  <span class="n">common_language</span>  \
+<span class="n">count</span>  <span class="mf">98612.000000</span>  <span class="mf">9.861200e+04</span>  <span class="mf">97676.000000</span>     <span class="mf">97676.000000</span>   
+<span class="n">mean</span>    <span class="mf">2002.210441</span>  <span class="mf">1.856316e+09</span>      <span class="mf">0.381547</span>         <span class="mf">0.380646</span>   
+<span class="n">std</span>        <span class="mf">7.713050</span>  <span class="mf">1.004735e+10</span>      <span class="mf">0.485769</span>         <span class="mf">0.485548</span>   
+<span class="nb">min</span>     <span class="mf">1989.000000</span>  <span class="mf">0.000000e+00</span>      <span class="mf">0.000000</span>         <span class="mf">0.000000</span>   
+<span class="mi">25</span><span class="o">%</span>     <span class="mf">1996.000000</span>  <span class="mf">1.084703e+06</span>      <span class="mf">0.000000</span>         <span class="mf">0.000000</span>   
+<span class="mi">50</span><span class="o">%</span>     <span class="mf">2002.000000</span>  <span class="mf">6.597395e+07</span>      <span class="mf">0.000000</span>         <span class="mf">0.000000</span>   
+<span class="mi">75</span><span class="o">%</span>     <span class="mf">2009.000000</span>  <span class="mf">6.125036e+08</span>      <span class="mf">1.000000</span>         <span class="mf">1.000000</span>   
+<span class="nb">max</span>     <span class="mf">2015.000000</span>  <span class="mf">4.977686e+11</span>      <span class="mf">1.000000</span>         <span class="mf">1.000000</span>   
+         <span class="n">contiguity</span>  <span class="n">log_distance</span>  
+<span class="n">count</span>  <span class="mf">97676.000000</span>  <span class="mf">97676.000000</span>  
+<span class="n">mean</span>       <span class="mf">0.034051</span>      <span class="mf">8.722631</span>  
+<span class="n">std</span>        <span class="mf">0.181362</span>      <span class="mf">0.818818</span>  
+<span class="nb">min</span>        <span class="mf">0.000000</span>      <span class="mf">5.061335</span>  
+<span class="mi">25</span><span class="o">%</span>        <span class="mf">0.000000</span>      <span class="mf">8.222970</span>  
+<span class="mi">50</span><span class="o">%</span>        <span class="mf">0.000000</span>      <span class="mf">9.012502</span>  
+<span class="mi">75</span><span class="o">%</span>        <span class="mf">0.000000</span>      <span class="mf">9.303026</span>  
+<span class="nb">max</span>        <span class="mf">1.000000</span>      <span class="mf">9.890765</span> 
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">loaded_data</span><span class="p">[</span><span class="s1">&#39;importer&#39;</span><span class="p">]</span>  <span class="c1"># The brackets ( [] ) are used to index or &quot;slice&quot; the data. In this case,</span>
+<span class="o">...</span> <span class="c1">#  it returns the entire &quot;reporter_iso3&quot; column.</span>
+<span class="mi">0</span>        <span class="n">AUS</span>
+<span class="mi">1</span>        <span class="n">AUS</span>
+<span class="mi">2</span>        <span class="n">AUS</span>
+        <span class="o">...</span> 
+<span class="mi">98609</span>    <span class="n">VEN</span>
+<span class="mi">98610</span>    <span class="n">VEN</span>
+<span class="mi">98611</span>    <span class="n">VEN</span>
+<span class="n">Name</span><span class="p">:</span> <span class="n">importer</span><span class="p">,</span> <span class="n">Length</span><span class="p">:</span> <span class="mi">98612</span><span class="p">,</span> <span class="n">dtype</span><span class="p">:</span> <span class="nb">object</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">loaded_data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;importer&quot;</span><span class="p">]</span>  <span class="c1"># The command &quot;.loc&quot; can be used to identify specific row and column indexes</span>
+<span class="s1">&#39;AUS&#39;</span>
+
+<span class="c1"># Suppose we wanted to figure out what countries are present as exporting partners in the data:</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">partner_countries</span> <span class="o">=</span> <span class="n">loaded_data</span><span class="p">[</span><span class="s1">&#39;exporter&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">num_of_partners</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">partner_countries</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">num_of_partners</span><span class="p">)</span>
+<span class="mi">62</span>
+
+<span class="c1"># Suppose we wanted to summarize the data by country</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">trade_data_temp</span> <span class="o">=</span> <span class="n">loaded_data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;importer&#39;</span><span class="p">)</span>  <span class="c1"># Creates a modified dataframe where observations</span>
+<span class="c1"># are grouped by reporter (and saved to a new object to avoid over-writting the original</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">imports_summary</span> <span class="o">=</span> <span class="n">trade_data_temp</span><span class="p">[</span><span class="s1">&#39;trade_value&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">agg</span><span class="p">([</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="s1">&#39;max&#39;</span><span class="p">,</span> <span class="s1">&#39;count&#39;</span><span class="p">])</span>  <span class="c1"># this returns a DataFrame with the</span>
+<span class="c1"># desired stats for each &#39;group&#39;.</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">imports_summary</span> <span class="o">=</span> <span class="n">imports_summary</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>  <span class="c1"># By default, the groups get turned into index labels. the reset_index()</span>
+<span class="c1"># command turns them back into a column, which is generally useful.</span>
+
+
+<span class="c1"># Suppose we wanted to drop the distance variable.</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">trade_data</span> <span class="o">=</span> <span class="n">loaded_data</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;log_distance&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># This drops the column (axis = 1) &#39;log_distance&#39;,</span>
+<span class="c1"># or alternatively, suppose we wanted to keep only the trade data and identifiers.</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">trade_data</span> <span class="o">=</span> <span class="n">loaded_data</span><span class="p">[[</span><span class="s1">&#39;importer&#39;</span><span class="p">,</span> <span class="s1">&#39;exporter&#39;</span><span class="p">,</span> <span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="s1">&#39;trade_value&#39;</span><span class="p">]]</span>  <span class="c1"># would do the same</span>
+<span class="c1"># thing by returning only the specified list of columns.</span>
+<span class="c1">#Perhaps we want to rename a column</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">trade_data</span> <span class="o">=</span> <span class="n">trade_data</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;trade_value&#39;</span><span class="p">:</span> <span class="s1">&#39;bilateral_trade&#39;</span><span class="p">})</span>
+
+<span class="c1"># How can we deal with missing values?</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">trade_data</span> <span class="o">=</span> <span class="n">trade_data</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">how</span><span class="o">=</span><span class="s1">&#39;any&#39;</span><span class="p">)</span>  <span class="c1"># This drops &#39;n/a&#39; rows if they appear in &#39;any&#39; column.</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">loaded_data</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">trade_data</span><span class="o">.</span><span class="n">shape</span>  <span class="c1"># Check to see if we lost any rows.</span>
+<span class="p">((</span><span class="mi">98612</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="p">(</span><span class="mi">84924</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+
+<span class="c1"># How can we subset the data based on a condition?</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">trade_data</span> <span class="o">=</span> <span class="n">trade_data</span><span class="p">[</span><span class="n">trade_data</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">1992</span><span class="p">]</span>
+
+
+<span class="c1"># suppose we wanted to save this modified trade dataset.</span>
+<span class="n">trade_data</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;C:Documents</span><span class="se">\\</span><span class="s2">modified_trade_data.csv&quot;</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># Lets now create a dataset of only the gravity variables</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">gravity_data</span> <span class="o">=</span> <span class="n">loaded_data</span><span class="p">[[</span><span class="s1">&#39;importer&#39;</span><span class="p">,</span> <span class="s1">&#39;exporter&#39;</span><span class="p">,</span> <span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="s1">&#39;agree_pta&#39;</span><span class="p">,</span>
+<span class="o">...</span>        <span class="s1">&#39;common_language&#39;</span><span class="p">,</span> <span class="s1">&#39;contiguity&#39;</span><span class="p">,</span> <span class="s1">&#39;log_distance&#39;</span><span class="p">]]</span>
+
+<span class="c1"># Next, lets merge the gravity data back onto to the trade data</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">estimation_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">left</span><span class="o">=</span><span class="n">trade_data</span><span class="p">,</span>  <span class="c1"># left: the first of two datasets to merge</span>
+<span class="o">...</span>                            <span class="n">right</span><span class="o">=</span><span class="n">gravity_data</span><span class="p">,</span>  <span class="c1"># right: the second dataset,</span>
+<span class="o">...</span>                            <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span>  <span class="c1"># this specifies the type of merge (&#39;left&#39;, &#39;right&#39;, &#39;inner&#39;, &#39;outer&#39;)</span>
+<span class="o">...</span>                            <span class="n">left_on</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;importer&#39;</span><span class="p">,</span> <span class="s1">&#39;exporter&#39;</span><span class="p">,</span> <span class="s1">&#39;year&#39;</span><span class="p">],</span>
+<span class="o">...</span>                            <span class="c1"># A list of columns to merge on in the left dataset</span>
+<span class="o">...</span>                            <span class="n">right_on</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;importer&#39;</span><span class="p">,</span> <span class="s1">&#39;exporter&#39;</span><span class="p">,</span> <span class="s1">&#39;year&#39;</span><span class="p">]</span>  <span class="c1"># A list of columns to merge on in the right dataset</span>
+<span class="o">...</span>                            <span class="p">)</span>  <span class="c1"># Note that the right_on and left_on lists should be in corresponding orders.</span>
+<span class="c1"># Merge Types:</span>
+<span class="c1">#   &#39;inner&#39; - retains only rows in which their are matches in both dataframes (i.e. _merge = 3 in stata)</span>
+<span class="c1">#   &#39;outer&#39; - retains all rows from both dataframes, even if they did not match (i.e. _merge = 3 &amp; 1 &amp; 2)</span>
+<span class="c1">#   &#39;left&#39;  - retains all rows from the left dataframe, with or without matches  (i.e. _merge = 3 &amp; 1)</span>
+<span class="c1">#   &#39;right&#39; - retains all rows from the right dataframe, with or without matches (i.e. _merge = 3 &amp; 2)</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">estimation_data</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+  <span class="n">importer</span> <span class="n">exporter</span>  <span class="n">year</span>  <span class="n">bilateral_trade</span>  <span class="n">agree_pta</span>  <span class="n">common_language</span>  \
+<span class="mi">0</span>      <span class="n">ARG</span>      <span class="n">AUS</span>  <span class="mi">1993</span>     <span class="mf">7.353949e+07</span>        <span class="mf">0.0</span>              <span class="mf">1.0</span>   
+<span class="mi">1</span>      <span class="n">ARG</span>      <span class="n">BOL</span>  <span class="mi">1993</span>     <span class="mf">1.077911e+08</span>        <span class="mf">1.0</span>              <span class="mf">1.0</span>   
+<span class="mi">2</span>      <span class="n">ARG</span>      <span class="n">BRA</span>  <span class="mi">1993</span>     <span class="mf">3.566469e+09</span>        <span class="mf">1.0</span>              <span class="mf">1.0</span>   
+<span class="mi">3</span>      <span class="n">ARG</span>      <span class="n">CAN</span>  <span class="mi">1993</span>     <span class="mf">8.783576e+07</span>        <span class="mf">0.0</span>              <span class="mf">1.0</span>   
+<span class="mi">4</span>      <span class="n">ARG</span>      <span class="n">CHE</span>  <span class="mi">1993</span>     <span class="mf">1.639864e+08</span>        <span class="mf">0.0</span>              <span class="mf">1.0</span>   
+   <span class="n">contiguity</span>  <span class="n">log_distance</span>  
+<span class="mi">0</span>         <span class="mf">0.0</span>      <span class="mf">9.398793</span>  
+<span class="mi">1</span>         <span class="mf">1.0</span>      <span class="mf">7.536893</span>  
+<span class="mi">2</span>         <span class="mf">1.0</span>      <span class="mf">7.783794</span>  
+<span class="mi">3</span>         <span class="mf">0.0</span>      <span class="mf">9.152224</span>  
+<span class="mi">4</span>         <span class="mf">0.0</span>      <span class="mf">9.327306</span>  
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">estimation_data</span> <span class="o">=</span> <span class="n">estimation_data</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">how</span><span class="o">=</span><span class="s1">&#39;any&#39;</span><span class="p">)</span>  <span class="c1"># drop any rows missing gravity data</span>
+
+
+<span class="err">```</span><span class="n">python</span>
+<span class="c1"># Our dataset contains some zero trade flows, lets drop them</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">positive_trade_rows</span> <span class="o">=</span> <span class="n">estimation_data</span><span class="p">[</span><span class="s1">&#39;bilateral_trade&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">0</span> <span class="c1"># Identify rows with positive trade</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">estimation_data</span> <span class="o">=</span> <span class="n">estimation_data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">positive_trade_rows</span><span class="p">,:]</span> <span class="c1"># This returns the rows identified in the previous steps</span>
+                                                             <span class="c1"># and all columns (:).</span>
+
+<span class="c1"># Create a new variable with log trade</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">estimation_data</span><span class="p">[</span><span class="s1">&#39;log_trade&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">estimation_data</span><span class="p">[</span><span class="s1">&#39;bilateral_trade&#39;</span><span class="p">])</span>
+
+
+<span class="c1"># Create Dummy variables</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">importer_fixed_effects</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">estimation_data</span><span class="p">[</span><span class="s1">&#39;importer&#39;</span><span class="p">],</span> <span class="n">prefix</span><span class="o">=</span><span class="s1">&#39;imp_fe&#39;</span><span class="p">)</span>  <span class="c1"># data specifies what</span>
+<span class="c1"># column should be used as the ID for dummies, &#39;prefix&#39; is an option that lets you name the fixed effects</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">importer_fixed_effects</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+   <span class="n">imp_fe_ARG</span>  <span class="n">imp_fe_AUS</span>  <span class="n">imp_fe_AUT</span>  <span class="n">imp_fe_BEL</span>  <span class="n">imp_fe_BOL</span>  <span class="n">imp_fe_BRA</span>  \
+<span class="mi">0</span>           <span class="mi">1</span>           <span class="mi">0</span>           <span class="mi">0</span>           <span class="mi">0</span>           <span class="mi">0</span>           <span class="mi">0</span>   
+   <span class="n">imp_fe_CAN</span>  <span class="n">imp_fe_CHE</span>  <span class="n">imp_fe_CHL</span>  <span class="n">imp_fe_CHN</span>     <span class="o">...</span>      <span class="n">imp_fe_SDN</span>  \
+<span class="mi">0</span>           <span class="mi">0</span>           <span class="mi">0</span>           <span class="mi">0</span>           <span class="mi">0</span>     <span class="o">...</span>               <span class="mi">0</span>   
+   <span class="n">imp_fe_SGP</span>  <span class="n">imp_fe_SWE</span>  <span class="n">imp_fe_THA</span>  <span class="n">imp_fe_TUN</span>  <span class="n">imp_fe_TUR</span>  <span class="n">imp_fe_URY</span>  \
+<span class="mi">0</span>           <span class="mi">0</span>           <span class="mi">0</span>           <span class="mi">0</span>           <span class="mi">0</span>           <span class="mi">0</span>           <span class="mi">0</span>   
+   <span class="n">imp_fe_USA</span>  <span class="n">imp_fe_VEN</span>  <span class="n">imp_fe_ZAF</span>  
+<span class="mi">0</span>           <span class="mi">0</span>           <span class="mi">0</span>           <span class="mi">0</span>  
+<span class="p">[</span><span class="mi">1</span> <span class="n">rows</span> <span class="n">x</span> <span class="mi">61</span> <span class="n">columns</span><span class="p">]</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">exporter_fixed_effects</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">estimation_data</span><span class="p">[</span><span class="s1">&#39;exporter&#39;</span><span class="p">],</span> <span class="n">prefix</span><span class="o">=</span><span class="s1">&#39;exp_fe&#39;</span><span class="p">)</span>  <span class="c1"># repeat for exporters</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">exporter_fixed_effects</span> <span class="o">=</span> <span class="n">exporter_fixed_effects</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;exp_fe_ZAF&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># drop a column to avoid collinearity</span>
+
+<span class="c1"># Split the data into right side and left side variables</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">lhs_data</span> <span class="o">=</span> <span class="n">estimation_data</span><span class="p">[[</span><span class="s1">&#39;log_trade&#39;</span><span class="p">]]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">rhs_data</span> <span class="o">=</span> <span class="n">estimation_data</span><span class="p">[[</span><span class="s1">&#39;log_distance&#39;</span><span class="p">,</span> <span class="s1">&#39;contiguity&#39;</span><span class="p">,</span> <span class="s1">&#39;agree_pta&#39;</span><span class="p">,</span> <span class="s1">&#39;common_language&#39;</span><span class="p">]]</span>
+
+<span class="c1"># Add the dummies to the right hand variables</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">rhs_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">objs</span><span class="o">=</span><span class="p">[</span><span class="n">rhs_data</span><span class="p">,</span> <span class="n">importer_fixed_effects</span><span class="p">,</span> <span class="n">exporter_fixed_effects</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># concatinate</span>
+<span class="c1"># is a method of combining two datasets that does not rely on merging/joining on keys, it does so on rows or columns</span>
+<span class="c1"># &#39;objs&#39; is a list of DataFrames to concatinate (they need to have the same row or column IDs as each other)</span>
+<span class="c1"># &#39;axis&#39; specifies whether you want to concatinate rows or colomns. axis = 1 specifies that the columns are to be</span>
+<span class="c1"># combined (i.e. horizontal combining)</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">rhs_data</span><span class="o">.</span><span class="n">columns</span>
+<span class="n">Index</span><span class="p">([</span><span class="s1">&#39;log_distance&#39;</span><span class="p">,</span> <span class="s1">&#39;contiguity&#39;</span><span class="p">,</span> <span class="s1">&#39;agree_pta&#39;</span><span class="p">,</span> <span class="s1">&#39;common_language&#39;</span><span class="p">,</span>
+       <span class="s1">&#39;imp_fe_ARG&#39;</span><span class="p">,</span> <span class="s1">&#39;imp_fe_AUS&#39;</span><span class="p">,</span> <span class="s1">&#39;imp_fe_AUT&#39;</span><span class="p">,</span> <span class="s1">&#39;imp_fe_BEL&#39;</span><span class="p">,</span> <span class="s1">&#39;imp_fe_BOL&#39;</span><span class="p">,</span>
+       <span class="s1">&#39;imp_fe_BRA&#39;</span><span class="p">,</span>
+       <span class="o">...</span>
+       <span class="s1">&#39;exp_fe_SDN&#39;</span><span class="p">,</span> <span class="s1">&#39;exp_fe_SGP&#39;</span><span class="p">,</span> <span class="s1">&#39;exp_fe_SWE&#39;</span><span class="p">,</span> <span class="s1">&#39;exp_fe_THA&#39;</span><span class="p">,</span> <span class="s1">&#39;exp_fe_TUN&#39;</span><span class="p">,</span>
+       <span class="s1">&#39;exp_fe_TUR&#39;</span><span class="p">,</span> <span class="s1">&#39;exp_fe_TWN&#39;</span><span class="p">,</span> <span class="s1">&#39;exp_fe_URY&#39;</span><span class="p">,</span> <span class="s1">&#39;exp_fe_USA&#39;</span><span class="p">,</span> <span class="s1">&#39;exp_fe_VEN&#39;</span><span class="p">],</span>
+      <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;object&#39;</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="mi">126</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="estimation">Estimation</h3>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">ols_model</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">lhs_data</span><span class="p">,</span> <span class="n">rhs_data</span><span class="p">)</span>  <span class="c1"># This step is a little odd. It creates a python &quot;regression object&quot;, to which</span>
+<span class="c1"># various other OLS fuctions can be applied</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">ols_results</span> <span class="o">=</span> <span class="n">ols_model</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>  <span class="c1"># .fit() is probably the most important function as it returns an object with</span>
+<span class="c1"># the estimated results.</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">ols_results</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>  <span class="c1"># returns the results in a standard format</span>
+<span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">statsmodels</span><span class="o">.</span><span class="n">iolib</span><span class="o">.</span><span class="n">summary</span><span class="o">.</span><span class="n">Summary</span><span class="s1">&#39;&gt;</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">                            OLS Regression Results                            </span>
+<span class="sd">==============================================================================</span>
+<span class="sd">Dep. Variable:              log_trade   R-squared:                       0.760</span>
+<span class="sd">Model:                            OLS   Adj. R-squared:                  0.760</span>
+<span class="sd">Method:                 Least Squares   F-statistic:                     1882.</span>
+<span class="sd">Date:                Wed, 01 Aug 2018   Prob (F-statistic):               0.00</span>
+<span class="sd">Time:                        12:31:34   Log-Likelihood:            -1.3837e+05</span>
+<span class="sd">No. Observations:               74384   AIC:                         2.770e+05</span>
+<span class="sd">Df Residuals:                   74258   BIC:                         2.781e+05</span>
+<span class="sd">Df Model:                         125                                         </span>
+<span class="sd">Covariance Type:            nonrobust                                         </span>
+<span class="sd">===================================================================================</span>
+<span class="sd">                      coef    std err          t      P&gt;|t|      [0.025      0.975]</span>
+<span class="sd">-----------------------------------------------------------------------------------</span>
+<span class="sd">log_distance       -1.1302      0.012    -96.040      0.000      -1.153      -1.107</span>
+<span class="sd">contiguity          0.2422      0.037      6.582      0.000       0.170       0.314</span>
+<span class="sd">agree_pta           0.1996      0.016     12.687      0.000       0.169       0.230</span>
+<span class="sd">common_language     0.6633      0.018     37.904      0.000       0.629       0.698</span>
+<span class="sd">imp_fe_ARG         28.3824      0.135    210.554      0.000      28.118      28.647</span>
+<span class="sd">...                    ...        ...        ...        ...         ...         ...</span>
+<span class="sd">(truncated for the tutorial)</span>
+<span class="sd">exp_fe_USA          3.2536      0.062     52.103      0.000       3.131       3.376</span>
+<span class="sd">exp_fe_VEN         -2.2117      0.063    -35.183      0.000      -2.335      -2.088</span>
+<span class="sd">==============================================================================</span>
+<span class="sd">Omnibus:                    13854.709   Durbin-Watson:                   1.701</span>
+<span class="sd">Prob(Omnibus):                  0.000   Jarque-Bera (JB):            70317.321</span>
+<span class="sd">Skew:                          -0.814   Prob(JB):                         0.00</span>
+<span class="sd">Kurtosis:                       7.476   Cond. No.                     1.46e+03</span>
+<span class="sd">==============================================================================</span>
+<span class="sd">Warnings:</span>
+<span class="sd">[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.</span>
+<span class="sd">[2] The condition number is large, 1.46e+03. This might indicate that there are</span>
+<span class="sd">strong multicollinearity or other numerical problems.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">ols_results</span><span class="o">.</span><span class="n">params</span>  <span class="c1"># returns only the parameter values</span>
+<span class="n">log_distance</span>       <span class="o">-</span><span class="mf">1.130207</span>
+<span class="n">contiguity</span>          <span class="mf">0.242191</span>
+<span class="n">agree_pta</span>           <span class="mf">0.199577</span>
+<span class="n">common_language</span>     <span class="mf">0.663323</span>
+<span class="n">imp_fe_ARG</span>         <span class="mf">28.382397</span>
+<span class="n">imp_fe_AUS</span>         <span class="mf">29.955248</span>
+                     <span class="o">...</span>    
+<span class="n">exp_fe_USA</span>          <span class="mf">3.253590</span>
+<span class="n">exp_fe_VEN</span>         <span class="o">-</span><span class="mf">2.211676</span>
+<span class="n">Length</span><span class="p">:</span> <span class="mi">126</span><span class="p">,</span> <span class="n">dtype</span><span class="p">:</span> <span class="n">float64</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">ols_results</span><span class="o">.</span><span class="n">rsquared</span>  <span class="c1"># The r squared values</span>
+<span class="mf">0.7600680070806417</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">ols_results</span><span class="o">.</span><span class="n">HC1_se</span>  <span class="c1"># Huber/White standard errors. You could also return this originally with ols_model.fit(cov_type = &#39;HC1&#39;)</span>
+<span class="n">log_distance</span>       <span class="mf">0.011628</span>
+<span class="n">contiguity</span>         <span class="mf">0.036585</span>
+<span class="n">agree_pta</span>          <span class="mf">0.016563</span>
+<span class="n">common_language</span>    <span class="mf">0.017452</span>
+<span class="n">imp_fe_ARG</span>         <span class="mf">0.129097</span>
+<span class="n">imp_fe_AUS</span>         <span class="mf">0.125993</span>
+                     <span class="o">...</span>   
+<span class="n">exp_fe_USA</span>         <span class="mf">0.038809</span>
+<span class="n">exp_fe_VEN</span>         <span class="mf">0.069779</span>
+<span class="n">Length</span><span class="p">:</span> <span class="mi">126</span><span class="p">,</span> <span class="n">dtype</span><span class="p">:</span> <span class="n">float64</span>
+
+<span class="n">ols_results</span><span class="o">.</span><span class="n">pvalues</span>  <span class="c1"># pvalueslog_distance        0.000000e+00</span>
+<span class="n">contiguity</span>          <span class="mf">4.682417e-11</span>
+<span class="n">agree_pta</span>           <span class="mf">7.591490e-37</span>
+<span class="n">common_language</span>     <span class="mf">0.000000e+00</span>
+<span class="n">imp_fe_ARG</span>          <span class="mf">0.000000e+00</span>
+<span class="n">imp_fe_AUS</span>          <span class="mf">0.000000e+00</span>
+                       <span class="o">...</span>      
+<span class="n">exp_fe_USA</span>          <span class="mf">0.000000e+00</span>
+<span class="n">exp_fe_VEN</span>         <span class="mf">6.068582e-269</span>
+<span class="n">Length</span><span class="p">:</span> <span class="mi">126</span><span class="p">,</span> <span class="n">dtype</span><span class="p">:</span> <span class="n">float64</span>
+</code></pre></div>
+<h3 id="saving-the-results">Saving the results</h3>
+<p>There are many different way to export results including writing tables to a text file, saving estimates in a csv dataset, storing the python objects themselves.  In this tutorial, we will look at the first two options. For the third option, see the <em>pickle</em> package.</p>
+<p>To write the results to a text file, you need to 'open' a text file on the hard drive, write the results to the file, and close the file.
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">text_file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Documents</span><span class="se">\\</span><span class="s2">regression_results.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">text_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">ols_results</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span><span class="o">.</span><span class="n">as_text</span><span class="p">())</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">text_file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div></p>
+<p>Alternatively, you could export some of these results to excel.
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="n">ols_results</span><span class="o">.</span><span class="n">params</span><span class="p">)</span>  <span class="c1"># Statsmodels conveniently returns Pandas Objects, so we can feed them into a dataframe</span>
+<span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">pandas</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">series</span><span class="o">.</span><span class="n">Series</span><span class="s1">&#39;&gt;</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">results_dataframe</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span>
+<span class="o">...</span>     <span class="p">{</span><span class="s1">&#39;coefficients&#39;</span><span class="p">:</span> <span class="n">ols_results</span><span class="o">.</span><span class="n">params</span><span class="p">,</span> <span class="s1">&#39;SE&#39;</span><span class="p">:</span> <span class="n">ols_results</span><span class="o">.</span><span class="n">HC1_se</span><span class="p">,</span> <span class="s1">&#39;p_values&#39;</span><span class="p">:</span> <span class="n">ols_results</span><span class="o">.</span><span class="n">pvalues</span><span class="p">},</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">results_dataframe</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+                       <span class="n">SE</span>  <span class="n">coefficients</span>      <span class="n">p_values</span>
+<span class="n">log_distance</span>     <span class="mf">0.011628</span>     <span class="o">-</span><span class="mf">1.130207</span>  <span class="mf">0.000000e+00</span>
+<span class="n">contiguity</span>       <span class="mf">0.036585</span>      <span class="mf">0.242191</span>  <span class="mf">4.682417e-11</span>
+<span class="n">agree_pta</span>        <span class="mf">0.016563</span>      <span class="mf">0.199577</span>  <span class="mf">7.591490e-37</span>
+<span class="n">common_language</span>  <span class="mf">0.017452</span>      <span class="mf">0.663323</span>  <span class="mf">0.000000e+00</span>
+<span class="n">imp_fe_ARG</span>       <span class="mf">0.129097</span>     <span class="mf">28.382397</span>  <span class="mf">0.000000e+00</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">results_dataframe</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Documents</span><span class="se">\\</span><span class="s2">regression_results.csv&quot;</span><span class="p">)</span>
+</code></pre></div></p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        
+          Made with
+          <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+            Material for MkDocs
+          </a>
+        
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.8397ff9e.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f89c2efe.min.js"></script>
+      
+    
+  </body>
+</html>
