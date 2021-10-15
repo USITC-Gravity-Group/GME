@@ -1,5 +1,5 @@
 ## Class
-gme.**EstimationModel**(*estimation_data: gme.EstimationData = None, 
+gme.<strong>EstimationModel</strong>(<em>estimation_data: gme.EstimationData = None, 
                                 lhs_var: str = None,
                                 rhs_var: List[str] = None,
                                 sector_by_sector: bool = False,
@@ -19,133 +19,130 @@ gme.**EstimationModel**(*estimation_data: gme.EstimationData = None,
                                 iteration_limit:int = 1000,
                                 drop_intratrade:bool = False,
                                 retain_modified_data:bool = False,
-                                full_results:bool = False*)
+                                full_results:bool = False</em>)
  
 ## Description
-The class used to specify and run an gravity estimation.  A gme.EstimationData must be supplied along with a collection of largely optional arguments that specify variables to include, fixed effects to create, and how to perform the regression, among other options.  After the definition of the model, additional methods such as .estimate(), which performs the PPML estimation, or .combine_sector_results(), which combines the results for each sector (if applicable) can be called.
+The class used to specify and run an gravity estimation.  A gme.EstimationData must be supplied along with a collection of largely optional arguments that specify variables to include, fixed effects to create, and how to perform the regression, among other options.  After the definition of the model, additional methods such as <em>estimate</em>, which performs the PPML estimation, or <em>combine_sector_results</em>, which combines the results for each sector (if applicable) can be called.
 
 ## Arguments
-**estimation_data**: *gme.EstimationData* <br>
- &emsp; A GME EstimationData to use as the basis of the gravity model. 
+<dl>
 
-**spec_name**: (optional) *str* <br>
- &emsp; A name for the model. 
+<dt><strong>estimation_data</strong>: <em>gme.EstimationData</em> </dt>
+ <dd><p> A GME EstimationData to use as the basis of the gravity model. </p></dd>
 
-**lhs_var**: *str* <br>
- &emsp; The column name of the variable to be used as the dependent or 'left-hand-side' variable in the
- &emsp; regression. 
+<dt><strong>spec_name</strong>: (optional) <em>str</em> </dt>
+ <dd><p> A name for the model. </p></dd>
+
+<dt><strong>lhs_var</strong>: <em>str</em> </dt>
+ <dd><p> The column name of the variable to be used as the dependent or 'left-hand-side' variable in the regression. </p></dd>
             
-**rhs_var**: *List[str]* <br>
- &emsp; A list of column names for the independent or 'right-hand-side' variable(s) to be used in the <br>
- &emsp; regression. 
+<dt><strong>rhs_var</strong>: <em>List[str]</em> </dt>
+ <dd><p> A list of column names for the independent or 'right-hand-side' variable(s) to be used in the regression. </p></dd>
             
-**sector_by_sector**: *bool* <br>
- &emsp; If true, separate models are estimated for each sector, individually.  Default is False. If True, <br>
- &emsp; a sector_var_name must have been supplied to the EstimationData. 
+<dt><strong>sector_by_sector</strong>: <em>bool</em> </dt>
+ <dd><p> If true, separate models are estimated for each sector, individually.  Default is False. If True, a sector_var_name must have been supplied to the EstimationData. </p></dd>
             
-**drop_imp_exp**: (optional) *List[str]* <br>
- &emsp; A list of country identifiers to be excluded from the estimation when they appear as an<br> 
- &emsp; importer or exporter. 
+<dt><strong>drop_imp_exp</strong>: (optional) <em>List[str]</em> </dt>
+ <dd><p> A list of country identifiers to be excluded from the estimation when they appear as an importer or exporter. </p></dd>
             
-**drop_imp**: (optional) *List[str]* <br>
- &emsp; A list of country identifiers to be excluded from the estimation when they appear as an <br> 
- &emsp; importer. 
+<dt><strong>drop_imp</strong>: (optional) <em>List[str]</em> </dt>
+ <dd><p> A list of country identifiers to be excluded from the estimation when they appear as an importer. </p></dd>
             
-**drop_exp**: (optional) *List[str]* <br>
- &emsp; A list of country identifiers to be excluded from the estimation when they appear as an <br> 
- &emsp; exporter. 
+<dt><strong>drop_exp</strong>: (optional) <em>List[str]</em> </dt>
+ <dd><p> A list of country identifiers to be excluded from the estimation when they appear as an exporter. </p></dd>
             
-**keep_imp_exp**: (optional) *List[str]* <br>
- &emsp; A list of countries to include in the estimation as either importers or exporters. All others not <br>
- &emsp; specified are excluded. 
+<dt><strong>keep_imp_exp</strong>: (optional) <em>List[str]</em> </dt>
+ <dd><p> A list of countries to include in the estimation as either importers or exporters. All others not specified are excluded. </p></dd>
             
-**keep_imp**: (optional) *List[str]* <br>
- &emsp; A list of countries to include in the estimation as importers. All others not specified are <br>
- &emsp; excluded. 
+<dt><strong>keep_imp</strong>: (optional) <em>List[str]</em> </dt>
+ <dd><p> A list of countries to include in the estimation as importers. All others not specified are excluded. </p></dd>
             
-**keep_exp**: (optional) *List[str]* <br>
- &emsp; A list of countries to include in the estimation as exporters. All others not specified are <br>
- &emsp; excluded. 
+<dt><strong>keep_exp</strong>: (optional) <em>List[str]</em> </dt>
+ <dd><p> A list of countries to include in the estimation as exporters. All others not specified are excluded. </p></dd>
             
-**drop_years**: (optional) *list* <br>
- &emsp; A list of years to exclude from the estimation. The list elements should match the dtype of <br>
- &emsp; the year column in the EstimationData. 
+<dt><strong>drop_years</strong>: (optional) <em>list</em> </dt>
+ <dd><p> A list of years to exclude from the estimation. The list elements should match the dtype of the year column in the EstimationData. </p></dd>
             
-**keep_years**: (optional) *list* <br>
- &emsp; A list of years to include in the estimation. The list elements should match the dtype of the <br>
- &emsp; year column in the EstimationData. 
+<dt><strong>keep_years</strong>: (optional) <em>list</em> </dt>
+ <dd><p> A list of years to include in the estimation. The list elements should match the dtype of the year column in the EstimationData. </p></dd>
  
-**drop_missing**: *bool* <br>
- &emsp; If True, rows with missing values are dropped. Default is true, which drops if observations <br> 
- &emsp; are missing in any of the columns specified by lhs_var or rhs_var. 
+<dt><strong>drop_missing</strong>: <em>bool</em> </dt>
+ <dd><p> If True, rows with missing values are dropped. Default is true, which drops if observations are missing in any of the columns specified by lhs_var or rhs_var. </p></dd>
             
-**variables_to_drop_missing**: (optional) *List[str]*   <br>
-&emsp; A list of column names for specifying which columns to check for missing values when <br> 
-&emsp; dropping rows. 
+<dt><strong>variables_to_drop_missing</strong>: (optional) <em>List[str]</em>  </dt> 
+<dd><p> A list of column names for specifying which columns to check for missing values when dropping rows. </p></dd>
 
-**fixed_effects**: (optional) *List[Union[str,List[str]]]*  <br>
-&emsp; A list of variables to construct fixed effects based on. Can accept single string entries, which <br>
-&emsp; create fixed effects corresponding to that variable or lists of strings that create fixed effects <br>
-&emsp; corresponding to the interaction of the list items. For example, <br> 
-&emsp; *fixed_effects = ['importer',['exporter','year']]* would create a set of importer fixed effects <br> 
-&emsp; and a set of exporter-year fixed effects. 
+<dt><strong>fixed_effects</strong>: (optional) <em>List[Union[str,List[str]]]</em>  </dt>
+<dd><p> A list of variables to construct fixed effects based on. Can accept single string entries, which create fixed effects corresponding to that variable or lists of strings that create fixed effects corresponding to the interaction of the list items. For example, <em>fixed_effects = ['importer',['exporter','year']]</em> would create a set of importer fixed effects and a set of exporter-year fixed effects. </p></dd>
             
-**omit_fixed_effect**: (optional) *List[Union[str,List[str]]]*<br>
-&emsp; The fixed effect category from which to drop a fixed effect to avoid collinearity. The entry <br>
-&emsp; should be a subset of the list supplied for fixed_effects. In each case, the last fixed effect <br> 
-&emsp; is dropped. If not specified, the colinearity diagnostics will identify a column to drop on its <br> 
-&emsp; own. 
-            
-**std_errors**: (optional) *str*    <br>
- &emsp; Specifies the type of standard errors to be computed. Default is HC1, heteroskedascticity <br> 
- &emsp; robust errors. See [statsmodels documentation](http://www.statsmodels.org/dev/generated/statsmodels.regression.linear_model.RegressionResults.html) for alternative options. 
-            
-**iteration_limit**: (optional) *int*   <br>
- &emsp; Upper limit on the number of iterations for the estimation procedure. Default is 1000.  
+<dt><strong>omit_fixed_effect</strong>: <em> (optional) Dict[Union[str,Tuple[str]]:List[str, Tuple[str]]]</em> </dt>
+<dd><p> A dictionary of fixed effect categories and values to be dropped from dataframe. The dictionary key(s) can be either a single string corresponding to one dimension of the fixed effects or a tuple of strings specifying multiple dimensions. The values should then be either a list of strings for 1 dimension or a list of tuples for multiple dimensions. For example, {'importer':['DEU', 'ZAF'], 'exporter':['USA']} or {('importer','year'):[('ARG','2015'),('BEL','2013')]}. The fixed effect categories in the keys need to be a subset of the list supplied for fixed_effects. If not specified, the collinearity diagnostics will identify a column to drop on its own. 
 
-**drop_intratrade**: (optional) *bool*  <br>
-&emsp; If True, intra-national trade flows (importer == exporter) are excluded from the regression. <br> 
-&emsp; Default is False. 
-            
-**retain_modified_data**: (optional) *bool*   <br>
- &emsp; If True, the estimation DataFrames for each sector after they have been (potentially) modified<br> 
- &emsp; during the pre-diagnostics for collinearity and convergence issues. Default is False. <br> 
- &emsp; WARNING: these object sizes can be very large in memory so use with caution.  
+</p>
+<p>
 
-**full_results**: *bool* <br>
- &emsp; If True, estimate() returns the full results object from the GLM estimation.  These results can <br> 
- &emsp; be quite large as each estimated sector's results will contain a full copy of the data used for <br> 
- &emsp; its estimation, vectors of predicted values, and other memory intensive pieces of data. <br>
- &emsp; If False, estimate() returns a smaller subset of the results that are likely most useful (e.g.  <br> 
- &emsp; .params, .nobs, .bse, .pvalues, .aic, .bic).  For a list of these attributes, see the documentation<br> 
- &emsp; for the function [SlimResults](SlimResults). 
+<em>(Version 1.2 or earlier)</em>: <strong>omit_fixed_effect</strong>: (optional) <em>List[Union[str,List[str]]]</em>
+ The fixed effect category from which to drop a fixed effect to avoid collinearity. The entry 
+ should be a subset of the list supplied for fixed_effects. In each case, the last fixed effect  
+ is dropped. If not specified, the colinearity diagnostics will identify a column to drop on its  
+ own. 
+ </p>
+</dd>
+
+</dl>
+
+
+
+<dl>            
+<dt><strong>std_errors</strong>: (optional) <em>str</em></dt>    
+ <dd><p> Specifies the type of standard errors to be computed. Default is HC1, heteroskedascticity robust errors. See [statsmodels documentation](http://www.statsmodels.org/dev/generated/statsmodels.regression.linear_model.RegressionResults.html) for alternative options. </p></dd>
+            
+<dt><strong>iteration_limit</strong>: (optional) <em>int</em> </dt>  
+ <dd><p> Upper limit on the number of iterations for the estimation procedure. Default is 1000. </p></dd> 
+
+<dt><strong>drop_intratrade</strong>: (optional) <em>bool</em> </dt> 
+<dd><p> If True, intra-national trade flows (importer == exporter) are excluded from the regression. Default is False. </p></dd>
+            
+<dt><strong>retain_modified_data</strong>: (optional) <em>bool</em> </dt>  
+<dd><p>  If True, the estimation DataFrames for each sector after they have been (potentially) modified during the pre-diagnostics for collinearity and convergence issues. Default is False. WARNING: these object sizes can be very large in memory so use with caution.  </p></dd>
+
+<dt><strong>full_results</strong>: <em>bool</em> </dt>
+ <dd><p> If True, estimate() returns the full results object from the GLM estimation.  These results can be quite large as each estimated sector's results will contain a full copy of the data used for its estimation, vectors of predicted values, and other memory intensive pieces of data. If False, estimate() returns a smaller subset of the results that are likely most useful (e.g. .params, .nobs, .bse, .pvalues, .aic, .bic). For a list of these attributes, see the documentation for the function [SlimResults](SlimResults). </p></dd>
+ 
+<dt><strong>cluster_on</strong>: <em>(optional) str</em></dt>
+ <dd><p> The name of a column of categorical variables to use as clusters for clustered standard errors.</p></dd>
+</dl>
+
+
 
 ## Attributes
-**estimation_data**:<br> 
- &emsp; Return the EstimationData. 
+<dl>
+<dt><strong>estimation_data</strong>:</dt> 
+  <dd><p>Return the EstimationData.</p></dd> 
 
-**results_dict**:<br> 
- &emsp; Return the dictionary of regression results (after applying estimate method). 
+<dt><strong>results_dict</strong>: </dt>
+  <dd><p>Return the dictionary of regression results (after applying estimate method).</p></dd> 
 
-**modified_data**:<br> 
- &emsp; Return data modified data after removing problematic columns (after applying estimate<br> 
- &emsp; method) 
+<dt><strong>modified_data</strong>: </dt>
+  <dd><p>Return data modified data after removing problematic columns (after applying estimate method) </p></dd>
 
-**ppml_diagnostics**:<br> 
- &emsp; Return PPML estimation diagnostic information (after applying estimate method). See<br>
- &emsp; [estimate](estimate_method.md).  
+<dt><strong>ppml_diagnostics</strong>: </dt>
+  <dd><p>Return PPML estimation diagnostic information (after applying estimate method). See [estimate](estimate_method.md).</p></dd> 
+ </dl>
+
 
 ## Methods
-**estimate**:<br> 
- &emsp; Estimate a PPML model. See [estimate](../estimate_technical.md). 
+<dl>
+<dt><strong>estimate</strong>:</dt> 
+  Estimate a PPML model. See [estimate](../estimate_technical.md). 
 
-**combine_sector_results**:<br> 
- &emsp; Combine multiple result_dict entries into a single DataFrame. See [combine_sector_results](combine_sector_results.md).   
+<dt><strong>combine_sector_results</strong>: </dt>
+  Combine multiple result_dict entries into a single DataFrame. See [combine_sector_results](combine_sector_results.md).   
 
-**format_regression_table**:<br> 
- &emsp; Format regression results into a text, csv, or LaTeX table for presentation. See <br> 
- &emsp; [format_regression_table](format_regression_table.md) 
-
+<dt><strong>format_regression_table</strong>: </dt>
+  Format regression results into a text, csv, or LaTeX table for presentation. See  
+  [format_regression_table](format_regression_table.md) 
+</dl>
 
 ## Examples
 ```python
@@ -170,5 +167,11 @@ The class used to specify and run an gravity estimation.  A gme.EstimationData m
 >>> sample_estimation_model.format_regression_table(format = 'csv',
 ...                                                 path = "c:\\folder\\saved_results.csv")
 
+# Define a model with fixed effects and drop specific ones
+            >>> fe_model = EstimationModel(est_data,
+                                           lhs_var='trade_value',
+                                           rhs_var=grav_vars,
+                                           fixed_effects=[['importer', 'year'], ['exporter', 'year']],
+                                           omit_fixed_effect={('importer','year'):[('DEU','2015')],'exporter':['USA']})
 ```
 

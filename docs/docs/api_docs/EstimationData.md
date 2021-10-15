@@ -95,17 +95,14 @@ An object used for storing data for gravity modeling and producing some summary 
  &emsp; summarize,etc. data.
 
  &emsp; **Arguments:** <br> 
- 
- &emsp;&emsp; **tab_variables**: *List[str]* <br> 
-        &emsp;&emsp;&emsp; Column names of variables to be tabulated
+ &emsp;&emsp; **tab_variables**: *List[str]* 
+        <p style="margin-left:50px"> Column names of variables to be tabulated</p>
         
  &emsp;&emsp; **by_group**: *List[str]* <br>
-        &emsp;&emsp;&emsp; Column names of variables by which to group observations for tabulation.
+        <p style="margin-left:50px"> Column names of variables by which to group observations for tabulation. </p>
  
  &emsp;&emsp; **how**: *List[str]* <br>
-         &emsp;&emsp;&emsp; The method by which to combine observations within a group. Can accept <br>
-         &emsp;&emsp;&emsp; 'count', 'mean',  'median', 'min', 'max', 'sum', 'prod', 'std', and 'var'. It may work <br>
-         &emsp;&emsp;&emsp; with other numpy or pandas functions.
+         <p style="margin-left:50px"> The method by which to combine observations within a group. Can accept  'count', 'mean',  'median', 'min', 'max', 'sum', 'prod', 'std', and 'var'. It may work with other numpy or pandas functions.</p>
 
 &emsp;**Returns**: *Pandas.DataFrame* <br> 
     &emsp;&emsp; A DataFrame of tabulated values for each group.
@@ -143,13 +140,40 @@ An object used for storing data for gravity modeling and producing some summary 
  &emsp; Add a note to the list of notes in 'notes' attribute.
     
 &emsp; **Arguments**: <br>
-
 &emsp;&emsp; **note**: *str* <br>
-&emsp;&emsp;&emsp; A note to add to EstimationData. <br>
+<p style="margin-left:50px"> A note to add to EstimationData. </p>
      
 &emsp; **Returns**: *None*
 
 
+**correlation**:<br>
+&emsp; Return and plot the correlation matrix of the data. <br>
+
+&emsp; **Arguments**: <br>
+&emsp;&emsp; **columns**: *List[str]* (optional) <br>
+<p style="margin-left:50px"> A list of column names to include in the matrix. Default is to include all columns. </p>
+&emsp;&emsp; **plot**: *bool* <br>
+<p style="margin-left:50px"> If True, it plots a heatmap of the correlation matrix.</p>
+
+&emsp; **Returns**: *Pandas.DataFrame* <br> 
+&emsp;&emsp; A correlation matrix
+
+
+**add_pair_var**:<br>
+&emsp; Create a new variable that is a concatenation of categorical variables for use as a fixed effect or <br>
+&emsp; cluster category, for example. Original values are separated by '_' in the concatenated value.<br>
+                
+&emsp; **Arguments**: <br>
+&emsp;&emsp; **var_list**: *List[str]* <br>
+<p style="margin-left:50px"> List of names of columns to concatinate. </p>
+
+&emsp;&emsp; **var_name**: (Optional) *str* <br>
+<p style="margin-left:50px"> Column name to use for the new variable. By default, it uses the names in var_list separated by '_'. </p>
+
+&emsp;&emsp; **symmetric**: *bool* <br>
+<p style="margin-left:50px"> If False, all variables are concatenated in the order of the var_list (e.g. ARG_USA and USA_ARG would both would be created). If True, ignores ordering of values across columns and concatenates alphabetically (e.g. all ARG and USA pairings would concatenate as ARG_USA) </p>
+
+&emsp; **Returns**: *None*, adds new column to EstimationData.dataframe.
 
 ## Examples
 ```python

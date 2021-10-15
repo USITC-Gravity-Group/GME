@@ -1,33 +1,33 @@
 ## Function
-**combine_sector_results**(*result_dict:dict = None,
+<strong>combine_sector_results</strong>(<em>result_dict:dict = None,
                             write_path:str = None,
                             significance_stars: bool = False,
                             round_results: int = None,
-                            latex_syntax: bool = True*)
+                            latex_syntax: bool = True</em>)
                             
 ## Description
 Extract key result fields (coefficients, standard errors, and p-values) and combine them in a DataFrame. Has the option to write the data to a .csv file with or without extra value formatting options.
 
 ## Arguments
-**result_dict**: *Dict[statsmodels.genmod.generalized_linear_model.GLMResultsWrapper]*<br> 
- &emsp; A dictionary of GLM fit objects as returned by gme.EsimationModel.estimate()
+<dl>
+<dt><strong>result_dict</strong>: <em>Dict[statsmodels.genmod.generalized_linear_model.GLMResultsWrapper]</em> </dt>
+  <dd><p>A dictionary of GLM fit objects as returned by gme.EsimationModel.estimate()</p></dd>
 
-**write_path**: (optional) *str*<br> 
- &emsp; A system location and file name in which to write a csv file containing the combined results. 
+<dt><strong>write_path</strong>: (optional) <em>str</em> </dt>
+  <dd><p>A system location and file name in which to write a csv file containing the combined results. </p></dd>
 
-**significance_stars**: *bool*<br> 
- &emsp; If true, combined results are output with significance stars. *** <0.01, **<0.05, and *<0.10. Default<br> 
- &emsp; is False.
+<dt><strong>significance_stars</strong>: <em>bool</em> </dt>
+  <dd><p>If true, combined results are output with significance stars. \*\*\*&#60;0.01, \*\*&#60;0.05, and \*&#60;0.10. Default is False.</p></dd>
 
-**round_results**: (optional) *int*<br> 
- &emsp; Rounds combined results to the desired decimal place.
+<dt><strong>round_results</strong>: (optional) <em>int</em> </dt>
+  <dd><p>Rounds combined results to the desired decimal place.</p></dd>
         
-**latex_syntax**: *bool*<br> 
- &emsp; If True, reports aspects of results, such as significance stars, using standard latex syntax.
-
+<dt><strong>latex_syntax</strong>: <em>bool</em> </dt>
+  <dd><p>If True, reports aspects of results, such as significance stars, using standard latex syntax.</p></dd>
+</dl>
 ## Returns
-**Returns**: *Pandas.DataFrame*<br> 
- &emsp; A DataFrame containing combined GLM results for all results in the supplied dictionary.
+<strong>Returns</strong>: <em>Pandas.DataFrame</em> 
+  A DataFrame containing combined GLM results for all results in the supplied dictionary.
 
 ## Examples
 ```python

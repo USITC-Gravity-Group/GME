@@ -1,6 +1,7 @@
 site_name: GME Package Documentation
 pages:
    - Introduction: index.md
+   - What's New in v1.3: updates.md
    - Getting started: getting_started.md
    - Tutorials:
        - Estimation: estimation_tutorial.md
@@ -8,11 +9,13 @@ pages:
    - API Reference:
        - Data Construction:
            - EstimationData: api_docs/EstimationData.md
+           - make_data_square: api_docs/make_data_square.md
        - Model Estimation:
            - EstimationModel: api_docs/EstimationModel.md
            - estimate: api_docs/estimate_method.md
            - format_regression_table: api_docs/format_regression_table.md
            - combine_sector_results: api_docs/combine_sector_results.md
+           - coefficient_kd_plot: api_docs/coefficient_kd_plot.md
            - load_estimation: api_docs/load_estimation.md
            - save_estimation: api_docs/save_estimation.md
            - SlimResults: api_docs/SlimResults.md

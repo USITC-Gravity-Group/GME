@@ -1,92 +1,61 @@
-# Estimating a Gravity Model
- This tutorial demonstrates a basic gravity analysis including loading data, constructing some summary statistics, estimating a model, and outputting the results in several possible formats. For more information, see the list of commands and API reference in this documentation.
+# Tutorials
+The following tutorials are meant to introduce users to the gme package and help them become proficcient with many of the features that it offers.
 
+* **Tutorial 1 - Estimating a Gravity Model**: This example demonstrates a basic gravity analysis including loading data, constructing some summary statistics, estimating a model, and outputing the results in several possible formats.
+
+
+## Tutorial 1 - Estimating a Gravity Model
 ### Load Data
-The gme package uses a special object, called gme.EstimationData to store data. EstimationData includes a [Pandas.DataFrame](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html) containing data (trade + gravity + etc.) for estimation as well as additional information about that data and methods that can be used to summarize and/or manipulate the data.  This tutorial will demonstrate some of these features.
+The gme package uses a special object to manage data: the gme.EstimationData.  The data can be thought of as a specialized Pandas DataFrame.[^DataFrame]  The EstimationData features a Pandas.DataFrame containing data (trade + gravity + etc.) for estimation as well as additional information about that data and methods that can be used to summarize and/or manipulate the data.  This tutorial will demonstrate some of these features.
 
-First, we must begin by creating a gme.EstimationData.  Doing so requires the inputting of a Pandas.DataFrame and several pieces of "meta-data" that describe the data. Start by loading a dataset using the *read_csv()* function from pandas.  In the sample code below, we will read a dataset directly from the internet, but you could just as easily read the same file from your hard drive.
+First, we must begin by creating a gme.EstimationData.  Doing so requires the inputting of a Pandas.DataFrame and several pieces of "meta-data" that describe the data. Start by loading a dataset using the *read_csv()* function from pandas.  In the sample code below, we will read a dataset directly from the internet, but you could just as easily read the same file from you hard drive. 
 
-```python
->> >
-from src import gme as gme
->> > import pandas as pd
+```python tab="Code and output"
+>>> import gme as gme
+>>> import pandas as pd
 
->> > gravity_data = pd.read_csv('https://www.usitc.gov/data/gravity/example_trade_and_grav_data_small.csv')
+>>> gravity_data = pd.read_csv('https://www.usitc.gov/data/gravity/example_trade_and_grav_data_small.csv')
 
->> > gravity_data.head()
-importer
-exporter
-year
-trade_value
-agree_pta
-common_language
-    0
-AUS
-BRA
-1989
-3.035469e+08
-0.0
-1.0
-1
-AUS
-CAN
-1989
-8.769946e+08
-0.0
-1.0
-2
-AUS
-CHE
-1989
-4.005245e+08
-0.0
-1.0
-3
-AUS
-DEU
-1989
-2.468977e+09
-0.0
-0.0
-4
-AUS
-DNK
-1989
-1.763072e+08
-0.0
-1.0
-
-contiguity
-log_distance
-0
-0.0
-9.553332
-1
-0.0
-9.637676
-2
-0.0
-9.687557
-3
-0.0
-9.675007
-4
-0.0
-9.657311
-
-# Next, we use the loaded data to create an EstimationData instance called gme_data
->> > gme_data = gme.EstimationData(data_frame=gravity_data,
-                                   imp_var_name='importer',
-                                   exp_var_name='exporter',
-                                   trade_var_name='trade_value',
-                                   year_var_name='year',
-                                   notes='Downloaded from https://www.usitc.gov/data/gravity/example_trade_and_grav_data_small.csv')
-```
-
-In creating an instance of the EstimationData object, the user is asked to supply a Pandas.DataFrame, which we a loaded in the previous lines, and several types of descriptive arguments. These arguments (*imp_var_name*, *exp_var_name*, *trade_var_name*, and *year_var_name*) specify the columns in the supplied DataFrame corresponding to particular types of information that will likely be present in any gravity analysis (the column containing the importer ID, exporter ID, trade values, and year, respectively). These "meta-data" fields can be useful as they prevent users from having to re-enter these same basic characteristics of the data at later points and permit the automatic construction of certain types of summary information. Finally, an optional *note* is supplied to the EstimationData. The EstimationData object has a attribute that stores a list user-supplied strings for later reference. In this case, we have supplied a note indicating from where the data originated.
+>>> gravity_data.head()
+  importer exporter  year   trade_value  agree_pta  common_language  \
+0      AUS      BRA  1989  3.035469e+08        0.0              1.0   
+1      AUS      CAN  1989  8.769946e+08        0.0              1.0   
+2      AUS      CHE  1989  4.005245e+08        0.0              1.0   
+3      AUS      DEU  1989  2.468977e+09        0.0              0.0   
+4      AUS      DNK  1989  1.763072e+08        0.0              1.0 
   
-### Working with EstimationData
-In addition to providing an object class that communicates conveniently with the gme.EstimationModel (see below), the EstimationData provides a collection of data summary and manipulation tools.  For example, simply calling (or printing) the object, returns a summary of the scope of the data:
+   contiguity  log_distance  
+0         0.0      9.553332  
+1         0.0      9.637676  
+2         0.0      9.687557  
+3         0.0      9.675007  
+4         0.0      9.657311 
+ 
+
+# Next, we use the loaded data to create a EstimationData 
+>>> gme_data = gme.EstimationData(data_frame=gravity_data,
+                              imp_var_name='importer',
+                              exp_var_name='exporter',
+                              trade_var_name='trade_value',
+                              year_var_name='year',
+                              notes='Downloaded from https://www.usitc.gov/data/gravity/example_trade_and_grav_data_small.csv')
+```
+```Python tab="Code only"
+import gme as gme
+import pandas as pd
+gravity_data = pd.read_csv('https://www.usitc.gov/data/gravity/example_trade_and_grav_data_small.csv')
+gravity_data.head()
+gme_data = gme.EstimationData(data_frame=gravity_data,
+                              imp_var_name='importer',
+                              exp_var_name='exporter',
+                              trade_var_name='trade_value',
+                              year_var_name='year',
+                              notes='Downloaded from https://www.usitc.gov/data/gravity/example_trade_and_grav_data_small.csv')
+```
+In creating the EstimationData object, the user is asked to supply a Pandas.DataFrame, which we a loaded in the previous lines, and several types of descriptive arguments. These arguments (*imp_var_name*, *exp_var_name*, *trade_var_name*, and *year_var_name*) specify the columns in the supplied DataFrame corresponding to particular types of information that will likely be present in any gravity analysis (the column containing the importer ID, exporter ID, trade values, and year, respectively). These "meta-data" fields can be useful as they prevent users from having to re-enter these same basic characteristics of the data at later points and permit the automatic construction of certain types of summary information. Finally, an optional *note* is supplied to the EstimationData. The EstimationData object has a attribute that stores a list user-supplied strings for later reference. In this case, we have supplied a note indicating from where the data originated.
+  
+### Working with the EstimationData
+In addition to providing a object class that communicates conveniently with the gme.EstimationModel (see below), the EstimationData provides a collection of data summary and manipulation tools.  For example, simply calling (or printing) the object, returns a summary of the scope of the data:
 
 ```python
 >>> gme_data
@@ -210,7 +179,7 @@ Finally, the EstimationData object features a tool for easy aggregation and cust
 3           8.223088          5.061335          9.824095  
 4           9.090685          7.150738          9.874070
 
-# Calculate mean, standard deviation, and count of trade for each importer/exporter pair.
+# Calculate mean, standard deviation, and count of trade for each imoprter/exporter pair.
 >>> aggregated_data_2 = gme_data.tabulate_by_group(
                                 tab_variables = ['trade_value'],
                                 by_group = ['importer','exporter'],
@@ -227,15 +196,17 @@ Finally, the EstimationData object features a tool for easy aggregation and cust
     **Knowing when to end a command with *( )*:** When first learning python, it can be confusing trying to determine when a command applied to an object should be followed by parentheses. In the preceding code example, you will see instances of both: *gme_data.columns* and *gme_data.year_list( )*, for example.  Knowing which format to use is largely a matter of becoming familiar with the functions you are using.  However, there is a logic to it.  Each time a command is applied to an object (i.e. using the syntax *object.command*), you are calling either an **attribute** of the object or a **method** on the object.  An attribute is a piece of information that has already been created and included in the object whereas a method is effectively a function that can be run on the object.  A method will be called with two parentheses because they will often accept additional arguments. For example, this is the case with the DataFrame method *head( )*, which can accept a user-provided number of rows.  However, you will often find that you do not need to supply additional arguments to a method, in which case you leave the parentheses empty.  An attribute, by comparison, does not feature *( )* because there is no need or ability to provide additional input because the contents of that attribute have already been computed. As mentioned before, knowing whether a command is an attribute or a method, however, simply requires familiarity with the object.  
 
 ### Creating and estimating a model
-Once a EstimationData has been created, estimating a gravity model using the data is fairly straightforward.  There are two basic step for estimation: (1) define a model and (2) estimate the model.
+Once a EstimationData has been created, estimating a gravity model using the data is fairly straight forward.  There are two basic step for estimation.
+1. Define a model
+2. Estimate the model
 
-Defining the model amounts to creating another object called *EstimationModel*.  Like the EstimationData, EstimationModel is meant to standardize and simplify the steps typically taken to specify and estimate a gravity model.  While the EstimationData is meant to be an object that is created once for each study, many EstimationModels will likely be defined and redefined as you test different specifications. Thus, the arguments and attributes of the EstimationModel reflect the different types of modifications you may want to make as you select your preferred specification. 
+Defining the model amounts to creating another object called a *EstimationModel*.  Like the EstimationData, the Estimation model is meant to standardize and simplify the steps typically taken to specify and estimate a gravity model.  While the EstimationData is meant to be an object that is created once for each study, many EstimationModels will likely be defined and redefined as you test different specifications. Thus, the arguments and attributes of the EstimationModel reflect the different types of modifications you may want to make as you select your preferred specification. 
 
-As with the EstimationData, the EstimationModel is largely a dataset, with added information that define the characteristics of the particular model. The following examples depict several model specifications, each demonstrating different types of model aspects that can be specified.
+As with the EstimationData, the EstimationModel is largely a dataset---this time in the form of the EstimationData---with added information that define the characteristics of the particular model. The following example depict several model specifications, each demonstrating different types of model aspects that can be specified.
 
 ```python
 # A simple case in which 'trade_value' is dependent on 'log_distance', 'agree_pta', etc.
->>> model_baseline = gme.EstimationModel(estimation_data = gme_data,
+>>> model_baseline = gme.EstimationModel(data_object = gme_data,
                                          lhs_var = 'trade_value',
                                          rhs_var = ['log_distance',
                                                     'agree_pta', 
@@ -244,7 +215,7 @@ As with the EstimationData, the EstimationModel is largely a dataset, with added
 
 # A specification that will generate and include importer-year and exporter-year
 # fixed effects                                                    
->>> fixed_effects_model  = gme.EstimationModel(estimation_data = gme_data,
+>>> fixed_effects_model  = gme.EstimationModel(data_object = gme_data,
                                  lhs_var = 'trade_value',
                                  rhs_var = ['log_distance',
                                             'agree_pta', 
@@ -255,7 +226,7 @@ As with the EstimationData, the EstimationModel is largely a dataset, with added
 
 # A specification that uses a subset of the data. The United States ('USA') will be omitted
 # and only the years 2013--2015 will be included.
->>> data_subset_model = gme.EstimationModel(estimation_data = gme_data,
+>>> data_subset_model = gme.EstimationModel(data_object = gme_data,
                                             lhs_var = 'trade_value',
                                             rhs_var = ['log_distance',
                                                        'agree_pta', 
@@ -264,17 +235,17 @@ As with the EstimationData, the EstimationModel is largely a dataset, with added
                                             drop_imp_exp=['USA'],
                                             keep_years=[2015, 2014, 2013])                                                  
 ```    
-When specifying a model, there are several key types of attributes that can be included:
+When specifying the model, there are several key types of attributes that can be included.
 
 * **Model Variables**: The variables to be included are specified using the arguments *lhs_vars* and *rhs_vars*, which denote the left-hand-side dependent variable and right-hand-side independent variables, respectively.
-* **Fixed Effects**: The model, at the point at which it is estimated, will construct fixed effects if any are specified by *fixed_effects*.  These can be either single variables (e.g. \['importer'\]), or interacted variables (e.g. \[\['importer', 'year'\]\]). For example, entering \[ 'importer', \['exporter', 'year'\]\] would yield a set of importer fixed effects and a set of exporter-year fixed effects.  
+* **Fixed Effects**: The model, at the point at which it is estimated, will constructed fixed effects if any are specified by *fixed_effects*.  These can be either single variables (e.g. \['importer'\]), or interacted variables (e.g. \['importer', 'year'\]).
 * **Data Subsets**: Subsets of the data to use for estimation can be specified in a variety of ways. The arguments *keep_years* and *drop_years* can be used to select only a subset of years to include. Similarly the *keep_imp*, *keep_exp*, and *keep_imp_exp* arguments, and their corresponding *drop_...* options can do the same for importers and/or exporters. 
 
-Once a model has been defined, running a PPML estimation according to the supplied specification is quite straightforward. It only requires the application of a single method of the EstimationModel: *.estimate()*.  No further inputs are required.
+Once a model has been defined, running a PPML estimation according to the supplied specification is quite straightforward, it only requires the application of a single method of the EstimationModel: *.estimate()*.  No further inputs are required.
 
 ```python
 # Define a new, fixed effects model using only a subset of years (to reduce the computation time)
->>> fixed_effects_model_2  = gme.EstimationModel(estimation_data = gme_data,
+>>> fixed_effects_model_2  = gme.EstimationModel(data_object = gme_data,
                                                  lhs_var = 'trade_value',
                                                  rhs_var = ['log_distance',
                                                             'agree_pta', 
@@ -303,7 +274,7 @@ Estimation completed at 08:58 AM  on Jun 19, 2018
 
 
 ### Viewing, formatting, and outputting the results
-The first step to viewing and working with the regression estimates is unpacking them from the dictionary in which they have been stored. A dictionary is an object in which each item stored in the dictionary is associated with a key.  That key can be used to return its associated item. In the above example, *estimates* is a dictionary in which each item is an object of results. In our example there is only one object because only one regression was run. In cases in which multiple regressions are run because multiple sectors are estimated separately, the dictionary would contain multiple results, each keyed with the name of the respective sector. 
+The first step to viewing and working with the regression estimates is unpacking them from the dictionary in which they have been stored. A dictionary is an object in which each item stored in the dictionary is associated with a key.  That key can be used to return its associated item. In the above example, *estimates* is a dictionary in which each item is an object of results. In this tutorial, there is only one object in this case because only one regression was run. In cases in which multiple regressions are run because multiple sectors are estimated separately, the dictionary would contain multiple results, each keyed with the name of the respective sector. 
 ```python
 # Return a list of keys in the object
 >>> estimates.keys()
@@ -345,7 +316,7 @@ importer_year_fe_AUS2013    28.1690      0.315     89.455      0.000      27.552
 
 # Extract the estimated parameter values (returned as a Pandas.Series)
 >>> coefficients = results.params
->>> coefficients.head()
+>>> coefficients,head()
 log_distance                -0.739840
 agree_pta                    0.334219
 common_language              0.128770
@@ -399,7 +370,7 @@ The gme package also features several tools to help compile and format the resul
 
 ```python
 # Collect coefficients, standard errors, and p-values from the regression results.
->>> combined_results = fixed_effects_model_2.combine_sector_results()
+>>> combined_results = fixed_effects_model_2.combine_sector_results
 >>> combined_results.head()
                           all_coeff     all_pvalue              all_stderr
 log_distance              -0.739840  9.318804e-211  (0.023879411125052336)
@@ -435,11 +406,15 @@ common_language            0.129***
 ```
 It is also worth noting that the commands *combine_sector_results()* and *format_regression_tables()* can both be used in one of two ways.  They are both stand-alone functions that can be supplied dictionaries of results (produced directly from the EstimationModel or custom assembled by a user), as in the *format_regression_table()* example.  Alternatively, both can be used as methods on the EstimationObject itself, as in the *combine_sector_results()* example.
 !!! tip
-    **LaTeX users**: The method *format_regression_table* can output a table into a csv file with some desired LaTeX syntax. This can be done by specifying *format = '.csv'* and *'latex_syntax'=True*. This option allows users to manipulate the tables in spreadsheet software while retaining LaTeX syntax.  We recommend reading the file into the spreadsheet software as 'text data' so that it does not try to interpret the formatting of the table entries. 
-
-The gme package also has several ways to save the results to a file, either in full or in a space-saving slim version. See the API Reference portion of this documentation for further information. 
+    **LaTeX users**: The method *format_regression_table* can output a table into a csv file with some desired LaTeX syntax. This can be done by specifying *format = '.csv'* and *'latex_syntax'=True*. This option allows users manipulate the tables in spreadsheet software while retaining LaTeX syntax.  We recommend reading the file into the spreadsheet software as 'text data' so that it does not try to interpret the formatting of the table entries. 
 
 
+
+
+
+
+
+[^DataFrame]: See [https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html) for more information on Pandas DataFrames.
 
 [^sector_var_name]: Had their been multiple sectors, we could have indicated so by adding the input *sector_var_name = 'sector_column'* in the declaration of the EstimationData.
 

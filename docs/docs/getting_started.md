@@ -4,14 +4,14 @@
 
 ### Dependencies
 
-The GME package requires pandas, statsmodels, patsy, and scipy packages. If not already present on your system, they will be automatically installed when installing GME.
+The GME package requires pandas and statsmodels packages.
 
 ### Installation
 
 Download and install the GME package.
 
-[//]: # (???+ tip)
-[//]: #   (Easily copy the code below by using the copy button in the upper right corner of the code block.)  
+???+ tip
+    Easily copy the code below by using the copy button in the upper right corner of the code block.  
     
 ```python
 pip install gme
@@ -38,7 +38,7 @@ Begin by loading example trade data.  The dataset used in the following code is 
 ```python
 sample_data = pd.read_csv(
     'https://www.usitc.gov/data/gravity/example_trade_and_grav_data_small.csv')
-print(sample_data.head())
+sample_data.head()
 ```
 The first command above reads the data file into memory while the second shows the column names and first 5 lines of the data file.
 ```console
@@ -118,9 +118,8 @@ keep_exp: all available, Observations excluded by user: {'rows': 0, 'columns': 0
 drop_years: none, Observations excluded by user: {'rows': 0, 'columns': 0}
 keep_years: [2015], Observations excluded by user: {'rows': 94952, 'columns': 0}
 drop_missing: yes, Observations excluded by user: {'rows': 0, 'columns': 0}
-Estimation began at 08:09 AM  on Oct 16, 2018
-Omitted Columns: ['importer_fe_ARG', 'importer_fe_AUT', 'importer_fe_BEL', 'importer_fe_CHN', 'importer_fe_COL', 'importer_fe_DZA', 'importer_fe_EGY', 'importer_fe_GHA', 'importer_fe_IDN', 'importer_fe_IRN', 'importer_fe_ISR', 'importer_fe_KEN', 'importer_fe_KOR', 'importer_fe_KWT', 'importer_fe_LBY', 'importer_fe_MAR', 'importer_fe_NGA', 'importer_fe_NLD', 'importer_fe_PAK', 'importer_fe_SAU', 'importer_fe_SGP', 'importer_fe_THA', 'importer_fe_TUN', 'importer_fe_TWN', 'importer_fe_URY', 'importer_fe_VEN', 'importer_fe_ZAF']
-Estimation completed at 08:09 AM  on Oct 16, 2018
+Estimation began at 09:29 AM  on Jun 13, 2018
+Estimation completed at 09:29 AM  on Jun 13, 2018'''
 ```
 
 The results are stored in a collection (called dictionary in Python) with each sector having its own set of results. If no sectors were supplied or used, there would be only one set of results in the dictionary, labeled 'all'.
@@ -129,7 +128,8 @@ The results are stored in a collection (called dictionary in Python) with each s
 A simple table with regression results can be produced with the following command: 
 
 ```python
-gme_model.format_regression_table(format = "txt")
+gme_model.format_regression_table(format = ‘txt’,
+                                  path = “C:\\Documents\\regression_table.txt”)
 ```
 which produces the regression results:
 ```console                                
