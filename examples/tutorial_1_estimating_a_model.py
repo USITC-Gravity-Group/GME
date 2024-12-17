@@ -89,7 +89,7 @@ results.pvalues
 results.fittedvalues
 
 fixed_effects_model_2.ppml_diagnostics
-fixed_effects_model_2.ppml_diagnostics['Perfectly Collinear Variables']
+fixed_effects_model_2.ppml_diagnostics['Regressors Perfectly Collinear']
 
 
 combined_results = fixed_effects_model_2.combine_sector_results()

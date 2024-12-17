@@ -78,7 +78,7 @@ def combine_sector_results(result_dict:dict = None,
 
         singletons = {'nobs':result_dict[column_name].nobs,
                       'aic':result_dict[column_name].aic,
-                      'bic': result_dict[column_name].bic,
+                      'bic': result_dict[column_name].bic_deviance,
                       'likelihood':result_dict[column_name].llf}
 
         for key in singletons.keys():

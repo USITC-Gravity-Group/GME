@@ -143,7 +143,7 @@ def _generate_fixed_effects(data_frame,
     # Construct simple fixed effects
     for category in separate_fixed_effects:
         name = category + '_fe'
-        temp_fe = pd.get_dummies(data_frame[category], prefix=name)
+        temp_fe = pd.get_dummies(data_frame[category], prefix=name, dtype=int)
         fixed_effect_data_frame = pd.concat((fixed_effect_data_frame, temp_fe), axis=1)
 
     # Construct multiple fixed effects
@@ -153,14 +153,14 @@ def _generate_fixed_effects(data_frame,
 
         if len(item) == 1:
             name = '_'.join(item) + '_fe'
-            temp_fe = pd.get_dummies(data_frame[item[0]], prefix=name)
+            temp_fe = pd.get_dummies(data_frame[item[0]], prefix=name, dtype=int)
             fixed_effect_data_frame = pd.concat((fixed_effect_data_frame, temp_fe), axis=1)
 
         elif len(item) > 1:
             name = '_'.join(item) + '_fe'
             temp_data_frame = data_frame.loc[:, item]
             temp_data_frame.loc[:, name] = temp_data_frame.astype(str).sum(axis=1).copy()
-            temp_fe = pd.get_dummies(temp_data_frame[name], prefix=name)
+            temp_fe = pd.get_dummies(temp_data_frame[name], prefix=name, dtype=int)
             fixed_effect_data_frame = pd.concat((fixed_effect_data_frame, temp_fe), axis=1)
 
     fixed_effect_data_frame = fixed_effect_data_frame.reset_index(drop=True)
@@ -250,8 +250,9 @@ def _regress_ppml(data_frame, specification, fe_columns, drop_fixed_effect, clus
     non_collinear_rhs, collinear_fe = _collinearity_check(adj_rhs)
 
     total_fe_drop=user_fe+collinear_fe
-    for col in total_fe_drop:
-        adjusted_data_frame.drop(col, 1, inplace=True)
+    if len(total_fe_drop) > 0:
+        for col in total_fe_drop:
+            adjusted_data_frame.drop(labels = col, axis = 1, inplace=True)
 #
 #    if len(collinear_column_list) == 0:
 #        collinearity_indicator = 'No'
@@ -303,8 +304,7 @@ def _regress_ppml(data_frame, specification, fe_columns, drop_fixed_effect, clus
 
 
     # Collect diagnostics
-    diagnostics = overfit_column.append(exclusion_column)
-    #diagnostics = diagnostics.append(exclusion_column)
+    diagnostics = pd.concat([overfit_column,exclusion_column])
     diagnostics.at['Regressors with Zero Trade'] =  problem_variable_list
     diagnostics.at['Regressors from User'] = user_fe
     diagnostics.at['Regressors Perfectly Collinear'] = collinear_fe

@@ -82,7 +82,7 @@ class SlimResults(object):
         '''
         self.params = glm_results.params
         self.aic = glm_results.aic
-        self.bic = glm_results.bic
+        self.bic = glm_results.bic_deviance
         self.llf = glm_results.llf
         self.nobs = glm_results.nobs
         self.bse = glm_results.bse

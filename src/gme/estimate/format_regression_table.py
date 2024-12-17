@@ -154,7 +154,7 @@ def format_regression_table(results_dict: dict = None,
         try:
             num_obs = str(int(results.nobs))
             aic = str(round(results.aic, round_values))
-            bic = str(round(results.bic, round_values))
+            bic = str(round(results.bic_deviance, round_values))
             llf = str(round(results.llf, round_values))
         except:
             num_obs = 'Not reported for model type'

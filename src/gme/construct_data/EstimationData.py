@@ -436,10 +436,10 @@ class EstimationData(object):
             cax = ax.matshow(corr_mat, interpolation='nearest', cmap = 'PiYG')
             fig.colorbar(cax)
             labels = list(corr_mat.columns.values)
-            ax.set_xticklabels(labels, rotation='vertical')
-            ax.set_yticklabels(labels)
             ax.set_xticks(np.arange(len(labels)))
             ax.set_yticks(np.arange(len(labels)))
+            ax.set_xticklabels(labels, rotation='vertical')
+            ax.set_yticklabels(labels)
             plt.show()
         return corr_mat
 

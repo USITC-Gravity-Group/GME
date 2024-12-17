@@ -1,3 +1,6 @@
+# Version 1.3.1 Updates
+* Fixed compatibility issues arising due to updates from dependencies (Pandas and Statsmodels).
+
 # Version 1.3 Updates
 Several updates have been made to address bugs, improve the robustness of the estimation procedure, and add features.
  
